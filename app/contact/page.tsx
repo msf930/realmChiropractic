@@ -112,7 +112,7 @@ export default function Contact() {
         const form = e.target as HTMLFormElement;
         const formData = new FormData(form);
 
-        fetch(FORM_ENDPOINT, {
+        fetch(process.env.NEXT_PUBLIC_FORM_ENDPOINT, {
             method: 'POST',
             headers: {
                 Accept: 'application/json',
