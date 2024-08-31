@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 
-const FORM_ENDPOINT = "https://public.herotofu.com/v1/06059640-e647-11ee-96b6-0d5b8cafec4b";
+const FORM_ENDPOINT = process.env.FORM_ENDPOINT;
 
 const ContactForm = () => {
   const [submitted, setSubmitted] = useState(false);
@@ -10,14 +10,9 @@ const ContactForm = () => {
     e.preventDefault();
     const form = e.target as HTMLFormElement;
     const formData = new FormData(form);
-    // const inputs = e.target.elements;
-    const data = {};
 
-    // for (let i = 0; i < inputs.length; i++) {
-    //   if (inputs[i].name) {
-    //     data[inputs[i].name] = inputs[i].value;
-    //   }
-    // }
+
+
 
 
     fetch(FORM_ENDPOINT, {

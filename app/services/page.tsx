@@ -6,63 +6,177 @@ import { useState } from "react";
 import ContactForm from "../components/ContactForm";
 import Footer from "../components/Footer";
 
-import Hero from "@/public/newPatients.jpg";
+import Hero from "@/public/servicesHero.jpg";
 
 
 
 
 
 export default function NewPatients() {
-    const initialTitle = "What is a Spinal Shift?";
-    const initialText = ["We can say that no one is structurally perfect; however, there is a normal range. In the same manner that we can understand what a fever is because we know what normal temperature should be, we can also look at the spine and determine if a Spinal Shift has occured by comparing them to an established set of normal measurements. There are established normals almost everywhere we look, from the gauges and warning indicators on the dashboard of your car to a headache in the middle of the day.  These warning indicators/secondary conditions (symptoms) are meant to help us know when something is wrong so that we can take the proper action to fix the root of the problem.", "The body uses secondary conditions (symptoms) as warning indicators of a potentially more serious problem. A Spinal Shift is such a problem that may be the cause of your secondary condition. Our office focuses on detecting and correcting these Spinal Shifts so that the body can heal on its own and you can be free from these secondary conditions.", "Spinal Shifts can occur due to a childhood fall, a sports injury, an automobile accident, repetitive stresses (such as sitting at a desk for hours per day), or a variety of other seemingly innocuous injuries."];
 
-    const optionsTitle = "What are My Treatment Options?";
-    const optionsText = ["There are a wide variety of treatment options offered by both medical and alternative medicine practitioners. Most doctors are focused on pain and symptom relief (secondary conditions), and they do an excellent job. People often start with medication or herbal/homeopathic remedies which can shut-off your body's pain receptors.", "If that does not work, then courses of physical therapy may be used to strengthen muscular weakness, address spasm, or increase mobility. Injection programs to calm the site of pain come in next.", "When those do not work, more invasive procedures like surgery start to fall into the picture. All of these treatment programs are effective in the appropriate time and place and have different goals.", "Our goal at Realm Chiropractic is to restore the structural integrity of your spine. Dr. Nick and Dr. Rachel have built excellent relationships with the best health care providers throughout the community. If during the consultation we find that Realm Chiropractic is not right for you, we will make sure to find the best practitioner to help resolve your specific condition."];
+    //YOGA
+    const yogaTitle: string = "Personalized Yoga Sessions";
+    const yogaText: string[] = ["At Realm Chiropractic, we believe in a comprehensive approach to wellness. To complement our functional correction chiropractic care, we offer personalized yoga sessions tailored to your individual needs. Our integrated approach to yoga and chiropractic care provides:"];
+    const yogaList: string[][] =
+        [
+            ["Enhanced Flexibility and Strength: ", "Personalized yoga sessions help improve your flexibility and strength, supporting your chiropractic adjustments and overall musculoskeletal health."],
+            ["Stress Relief and Relaxation: ", "Yoga promotes relaxation and reduces stress, enhancing the benefits of your chiropractic care and contributing to your overall well-being."],
+            ["Improved Posture and Alignment: ", "Through guided yoga practices, we focus on postural awareness and alignment, which supports the structural integrity of your spine and joints."],
+            ["Holistic Healing: ", "Combining yoga with chiropractic care fosters a holistic healing environment, addressing both physical and mental health for a balanced lifestyle."]
+        ];
+    const yogaText2: string[] = ["To maximize the benefits, we recommend a minimum of three yoga sessions. This commitment allows us to tailor a program specifically for you, ensuring sustained improvements in flexibility, strength, and overall well-being.", "Our personalized yoga sessions are designed to work synergistically with your chiropractic adjuctments, ensuring a comprehensive and tailored approach to your health and wellness. Whether you're new to yoga or an experienced practitioner, our customized sessions will enhance your chiropractic care and help you achieve your health goals."]
 
-    const conditionsTitle = "What are Secondary Conditions?";
-    const conditionsText = ["Have you ever had that engine light suddenly illuminate in your car? Is that light the actual problem, or is the light just an indication that there is an underlying issue with the car? Obviously, that light functions to let us know that there is a problem with the car. In this case, the engine light in the car is a  symptom  due to the underlying condition. Like your car, our bodies also have these warning lights, or symptoms that tell us that there is an underlying condition, something more serious, in our bodies. In structural chiropractic, we call these symptoms, Secondary Conditions, because that is exactly what they are. They are secondary to an underlying condition which is resulting in these secondary conditions. This underlying condition, a Spinal Shift, can result in many secondary conditions, some of which include:"]
-    const conditionsList = ["Neck and Back Pain", "Sciatica and Hip Pain", "Numbness and Tingling", "Muscular Spasm/Tension", "Headaches/Migraines", "Pinched Nerve", "Herniated Disc", "Canal Stenosis", "Degenerative Joint Disease", "Less Range of Motion", "Poor Posture", "Muscular Imbalance", "Dizziness or Vertigo", "Carpal Tunnel", "ADHD", "Ear Infections", "Colic", "Fatigue", "Insomnia"];
+    //ATHLETIC
+    const athleticTitle: string = "Athletic Performance Consulting";
+    const athleticText: string[] = ["At Realm Chiropractic, we understand that athletes require specialized care to perform at their best. Our athletic performance consulting services, combined with functional correction chiropractic care, are designed to optimize your physical capabilities and enhance your overall performance. Our approach includes:"];
+    const athleticList: string[][] =
+        [
+            ["Performance Optimization:", "We assess and address any musculoskeletal imbalances, ensuring your body functions at its peak."],
+            ["Injury Prevention: ", "Through chiropractic adjustments and targeted performance strategies, we help prevent injuries and keep you in top shape."],
+            ["Enhanced Recovery: ", "Our treatments promote faster recovery times, allowing you to return to training and competition quickly and safely."],
+            ["Customized Performance Plans: ", "We create individualized performance plans tailored to your specific sport, goals, and needs. Our plans incorporate advanced chiropractic techniques, exercises, stretches, nutrition, and other recovery and performance recommendations to help you achieve optimal performance."]
+        ];
+    const athleticText2: string[] = ["Whether you’re a professional athlete or a weekend warrior, our integrated approach to athletic performance consulting and chiropractic care will help you achieve your highest potential. Let us support your journey to peak performance and optimal health."]
 
-    const beforeTitle = "What Do I Need to Know Before My Exam?";
-    const beforeText = ["Following a complimentary consultation, you will be given the opportunity to undergo a comprehensive functional corrective chiropractic examination. Unlike some other chiropractic offices where the exam is done in 15 minutes by someone other than the doctor, this exam will be thoroughly performed by Dr. Rachel or Dr. Nick to identify the nature of your Spinal Shift. The exam will include:", " - Neuro Functional Thermography Analysys", " - Neuro Functional Muscular Analysis", "- Multi-Axial Structural Analysis", "- Automatic Operating System Anaylsis", "***Please be prepared to dress appropriately for the examination. It is required that you have atheletic/gym shorts available, and women should also come with a sports bra for an accurate functional assessment.", "After the examination, if a spinal shift has been confirmed, a follow up conference to review the results will be scheduled. Dr. Rachel or Dr. Nick will discuss the nature of your specific spinal shift, care options, and deliver your first structural correction."]
+    //KINESIO
+    const kinesioTitle: string = "Kinesiotaping";
+    const kinesioText: string[] = ["At Realm Chiropractic, we utilize Kinesiotaping to provide additional support for structural and neurological imbalances. Kinesiotaping is an effective tool used in conjunction with our chiropractic care to enhance your treatment outcomes. Our approach to Kinesiotaping includes:"];
+    const kinesioList: string[][] =
+        [
+            ["Support Structural Integrity: ", "Kinesiotaping helps stabilize and support muscles and joints, promoting proper alignment and function."],
+            ["Enhance Neurological Function: ", "By improving proprioception and neural feedback, Kinesiotaping aids in the body's natural healing processes."],
+            ["Reduce Pain and Inflammation: ", "The application of Kinesiotaping can help alleviate discomfort and reduce swelling, facilitating faster recovery."],
+            ["Improve Mobility: ", "Kinesiotaping allows for a full range of motion while providing the necessary support, making it ideal for active individuals and athletes."]
+        ];
+    const kinesioText2: string[] = ["Our Kinesiotaping services are designed to complement your functional correction chiropractic care, providing a holistic approach to your health and wellness. Whether you’re recovering from an injury, managing chronic pain, or seeking to improve your athletic performance, Kinesiotaping can be a valuable addition to your treatment plan."]
 
-    const consultTitle = "Schedule Your Complimentary Consultation!";
-    const consultText = ["At Realm Chiropractic, a consultation only means one thing: a conversation. When you schedule your consultation with us, you will have the opportunity to sit down with Dr. Nick or Dr. Rachel, not to have an exam, and not to be given a sales pitch, but for two distinct reasons:", "1) We want to get to know you and understand your life situation.", "2) You will get to know us, and how we may be able to assist you in achieving optimal health.", " During your consultation, we will provide you with an overview of structural chiropractic, and then explain how our focus - Functional Correction - is quite different from traditional chiropractic that you are probably accustomed to hearing about. But the most important aspect of the consultation is for us to determine if what we offer, can be the solution that you have been searching for.", " At the conclusion of your consultation, you will have the option of getting started that day if you so choose, or we can schedule you for a future date. At this time, we will get your full patient history, followed by a comprehensive Functional Chiropractic examination which includes:", "- Neuro Functional Thermography Analysys", "- Neuro Functional Muscular Analysis", "- Multi-Axial Structural Analysis", "- Automatic Operating System Anaylsis", "To be very clear, there is NO CHARGE for our consultation. We do not feel right charging for a conversation.", "To Schedule Your Appointment at our Lakewood chiropractic office, please call 720.722.3357 or fill out the form below and we will contact you promptly!"]
+    //NUTRITION
+    const nutritionTitle: string = "Functional Nutritional Support";
+    const nutritionText: string[] = ["At Realm Chiropractic, we are dedicated to your holistic well-being. To complement our functional chiropractic care, we offer a range of high-grade functional nutrition products from trusted brands. These supplements are carefully selected to:"];
+    const nutritionList: string[][] =
+        [
+            ["Support General Health: ", "Enhance your overall wellness with premium nutritional support."],
+            ["Strengthen Musculoskeletal Structure: ", "Boost your body's resilience and recovery with targeted nutrients."],
+            ["Restore Nutritional Imbalances: ", "Address deficiencies that may be affecting your body's ability to adapt and thrive."]
+        ];
+    const nutritionText2: string[] = ["Our functional nutrition products are integrated into your chiropractic care plan to maximize your health outcomes."]
 
-    const [displayTitle, setDisplayTitle] = useState(initialTitle);
-    const [displayText, setDisplayText] = useState(initialText);
-    const [displayList, setDisplayList] = useState([""]);
+    //HEALTH
+    const healthTitle: string = "Nutritional Health Assessments";
+    const healthText: string[] = ["In addition to our functional correction chiropractic services, we provide functional nutritional health assessments tailored to support a ketogenic lifestyle. Our assessments are designed to:"];
+    const healthList: string[][] =
+        [
+            ["Evaluate Nutritional Needs: ", "Identify specific areas where dietary adjustments can improve your health."],
+            ["Personalize Your Diet Plan: ", "Craft a ketogenic diet plan with specific supplement recommendations that suits your individual needs and lifestyle."],
+            ["Monitor and Adjust: ", "Regularly review and adapt your diet to ensure optimal results."]
+        ];
+    const healthText2: string[] = ["Whether you're looking to enhance your overall wellness or address specific health concerns, our integrated approach combines chiropractic care with nutritional support to help you achieve your health goals."]
+
+
+    //SAUNA
+    const saunaTitle: string = "Full spectrum Infrared sauna";
+    const saunaText: string[] = ["Infrared Saunas are an effective tool for natural healing and prevention.  Infrared has the ability to penetrate human tissue which in turn produces a host of anti-aging health benefits. If you want to get yourself back into balance, the benefits of an infrared sauna may be just what you need to achieve your wellness goals."];
+    const saunaList: string[][] =
+        [
+            ["Detoxification: ", "We are exposed and we ingest toxins everyday. Toxic substances are in the air we breathe, the water we drink, the food we eat and in the products we put on our skin. The fundamental benefit of an infrared sauna is to naturally detox the body through sweat. The technology allows the body to heat from the inside up to 3 degrees allowing your body to experience a deep productive sweat rather than just hot ambient air that only heats your outer skin. The Sunlighten infrared will provide a deep productive detoxifying experience that will leave you feeling refreshed and energized."],
+            ["Muscle Recovery and Performance: ", "When the body is trying to heal from an injury or recovering from a workout, deep penetrating infrared rays have been clinically proven to restore cellular repair while increasing circulation to remove cellular debris that includes pain producing chemicals such as lactic acid. Recovering with an infrared sauna session allows for damaged tissues to be healed and energy to be restored more effectively and more efficiently."],
+            ["Relaxation: ", "The therapeutic heat helps relax muscles that become tense under chronic stress.  As chiropractors, it’s vitally important to provide support for our clients to balance the autonomic nerve system.  When you do an IR sauna, the technology of the Sunlighten Sauna helps to calm muscles allowing you to feel relaxed and energized. "],
+            ["Strengthens Immune System: ", "It has been shown that when we increase our body’s core temperature (fever), we may increase our ability to fight infections by stimulating heat shock proteins that deter viruses from replicating and decrease inflammatory cytokine proteins. The Sunlighten’s infrared heating technology penetrates to the cellular level, clinically proven to raise core body temperature by 3 degrees. "]
+        ];
+    const saunaText2: string[] = ["Whether you're looking to enhance your overall wellness or address specific health concerns, our integrated approach combines chiropractic care with nutritional support to help you achieve your health goals.",
+        "For more benefits such as weight loss, heart health and anti-aging read here: https://www.sunlighten.com/infrared-sauna-health-benefits",
+        "To schedule or for questions, call our office! Sessions will be up to an hour.  Please bring proper attire such as a workout outfit or bathing suit, water, and a towel."
+    ]
+
+    //Myofascial
+    const myofascialTitle: string = "Myofascial Gliding and Static Cupping";
+    const myofascialText: string[] = ["At Realm Chiropractic, we offer gliding and static cupping as part of our comprehensive chiropractic care services. Cupping therapy, an ancient technique, enhances our ability to treat a variety of conditions and improve overall well-being. Our approach includes:"];
+    const myofascialList: string[][] =
+        [
+            ["Gliding Cupping: ", "This technique involves moving the cups across the skin to promote increased blood flow, reduce muscle tension and enhance mobility. It’s particularly effective for addressing larger muscle groups and areas with significant tension."],
+            ["Static Cupping: ", "In this method, cups are placed on specific points and left static for a duration. This helps to relieve deep-seated muscle tension, improve circulation, and promote relaxation and healing."]
+        ];
+    const myofascialText2: string[] = [""];
+
+
+    //Cupping
+    const cupTitle: string = "Benefits of Cupping Therapy";
+    const cupText: string[] = [""];
+    const cupList: string[][] =
+        [
+            ["Enhanced Circulation:", "Cupping increases blood flow to targeted areas, aiding in the delivery of oxygen and nutrients to tissues and promoting faster healing."],
+            ["Pain Relief: ", "Both gliding and static cupping can effectively reduce muscle pain and stiffness by alleviating muscle knots and improving tissue elasticity."],
+            ["Detoxification: ", "Cupping helps to draw out toxins and waste products from the tissues, promoting detoxification and overall wellness."],
+            ["Relaxation and Stress Reduction: ", "The therapeutic effects of cupping promote relaxation and reduce stress, complementing the benefits of chiropractic adjustments."],
+            ["Improved Mobility: ", "By reducing muscle tension and enhancing flexibility, cupping can improve your range of motion and overall mobility."]
+        ];
+    const cupText2: string[] = ["Our cupping therapy is designed to work synergistically with functional correction chiropractic care, offering a holistic approach to your health and well-being. Whether you’re dealing with chronic pain, recovering from an injury, or looking to enhance your overall wellness, our integrated treatments can help you achieve your health goals."];
+
+
+
+
+    const [displayTitle, setDisplayTitle] = useState(yogaTitle);
+    const [displayText, setDisplayText] = useState(yogaText);
+    const [displayList, setDisplayList] = useState(yogaList);
+    const [displayText2, setDisplayText2] = useState(yogaText2);
+
     const [selected, setSelected] = useState(1);
 
     const handleButtonClick1 = () => {
-        setDisplayTitle(initialTitle);
-        setDisplayText(initialText);
-        setDisplayList([]);
+        setDisplayTitle(yogaTitle);
+        setDisplayText(yogaText);
+        setDisplayList(yogaList);
+        setDisplayText2(yogaText2);
         setSelected(1);
     };
     const handleButtonClick2 = () => {
-        setDisplayTitle(optionsTitle);
-        setDisplayText(optionsText);
-        setDisplayList([]);
+        setDisplayTitle(athleticTitle);
+        setDisplayText(athleticText);
+        setDisplayList(athleticList);
+        setDisplayText2(athleticText2);
         setSelected(2);
     };
     const handleButtonClick3 = () => {
-        setDisplayTitle(conditionsTitle);
-        setDisplayText(conditionsText);
-        setDisplayList(conditionsList);
+        setDisplayTitle(kinesioTitle);
+        setDisplayText(kinesioText);
+        setDisplayList(kinesioList);
+        setDisplayText2(kinesioText2);
         setSelected(3);
     };
     const handleButtonClick4 = () => {
-        setDisplayTitle(beforeTitle);
-        setDisplayText(beforeText);
-        setDisplayList([]);
+        setDisplayTitle(nutritionTitle);
+        setDisplayText(nutritionText);
+        setDisplayList(nutritionList);
+        setDisplayText2(nutritionText2);
         setSelected(4);
     };
     const handleButtonClick5 = () => {
-        setDisplayTitle(consultTitle);
-        setDisplayText(consultText);
-        setDisplayList([]);
+        setDisplayTitle(healthTitle);
+        setDisplayText(healthText);
+        setDisplayList(healthList);
+        setDisplayText2(healthText2);
         setSelected(5);
+    };
+    const handleButtonClick6 = () => {
+        setDisplayTitle(saunaTitle);
+        setDisplayText(saunaText);
+        setDisplayList(saunaList);
+        setDisplayText2(saunaText2);
+        setSelected(6);
+    };
+    const handleButtonClick7 = () => {
+        setDisplayTitle(myofascialTitle);
+        setDisplayText(myofascialText);
+        setDisplayList(myofascialList);
+        setDisplayText2(myofascialText2);
+        setSelected(7);
+    };
+    const handleButtonClick8 = () => {
+        setDisplayTitle(cupTitle);
+        setDisplayText(cupText);
+        setDisplayList(cupList);
+        setDisplayText2(cupText2);
+        setSelected(8);
     };
 
     return (
@@ -80,7 +194,7 @@ export default function NewPatients() {
                 </div>
                 <div className="logoFull">
                     <div className="heroText">
-                        <h1>New Patients</h1>
+                        <h1>Services</h1>
 
                     </div>
                     <div className="heroCTA">
@@ -88,26 +202,49 @@ export default function NewPatients() {
                     </div>
                 </div>
             </section>
-            <section className="infoContainer">
-                <div className="infoAside">
+            <section className="infoContainer2">
+                <div className="infoAside2">
                     <h3>Select Below to Learn More</h3>
                     <ul>
-                        <li onClick={handleButtonClick1} className={selected === 1 ? "font-semibold" : "font-normal"}>What is a Spinal Shift?</li>
-                        <li onClick={handleButtonClick2} className={selected === 2 ? "font-semibold" : "font-normal"}>What are My Treatment Options?</li>
-                        <li onClick={handleButtonClick3} className={selected === 3 ? "font-semibold" : "font-normal"}>Common Conditions?</li>
-                        <li onClick={handleButtonClick4} className={selected === 4 ? "font-semibold" : "font-normal"}>Before Your First Exam</li>
-                        <li onClick={handleButtonClick5} className={selected === 5 ? "font-semibold" : "font-normal"}>Complimentary Consultation</li>
+                        <li onClick={handleButtonClick1} className={selected === 1 ? "font-semibold" : "font-normal"}>{yogaTitle}</li>
+                        <li onClick={handleButtonClick2} className={selected === 2 ? "font-semibold" : "font-normal"}>{athleticTitle}</li>
+                        <li onClick={handleButtonClick3} className={selected === 3 ? "font-semibold" : "font-normal"}>{kinesioTitle}</li>
+                        <li onClick={handleButtonClick4} className={selected === 4 ? "font-semibold" : "font-normal"}>{nutritionTitle}</li>
+                        <li onClick={handleButtonClick5} className={selected === 5 ? "font-semibold" : "font-normal"}>{healthTitle}</li>
+                        <li onClick={handleButtonClick6} className={selected === 6 ? "font-semibold" : "font-normal"}>{saunaTitle}</li>
+                        <li onClick={handleButtonClick7} className={selected === 7 ? "font-semibold" : "font-normal"}>{myofascialTitle}</li>
+                        <li onClick={handleButtonClick8} className={selected === 8 ? "font-semibold" : "font-normal"}>{cupTitle}</li>
                     </ul>
                 </div>
-                <div className="infoContent">
+                <div className="infoContent2">
                     <h2>{displayTitle}</h2>
                     {displayText.map((line, id) => (
                         <p className="pb-5" key={id}>{line}</p>
                     ))}
-                    <div className="infoListCont">
-                        <ul className="infoList">
-                            {displayList[0] !== "" ? displayList.map((item) => (<li key={item}>{item}</li>)) : <></>}
+                    <div className="infoListCont2">
+                        <ul className="infoList2">
+                            {displayList[0][0] !== ""
+                                ?
+                                displayList.map((item) =>
+                                (<li key={item[0]}>
+                                    <div className="infoListItem2">
+                                        <p><b>{item[0]}</b> {item[1]}</p>
+                                    </div>
+                                </li>))
+                                :
+                                <></>}
                         </ul>
+                    </div>
+                    {displayText2[0] !== ""
+                        ?
+                        displayText2.map((line, id) => (
+                            <p className="pb-5" key={id}>{line}</p>
+                        ))
+                        :
+                        <></>
+                    }
+                    <div className="servicesLineCont">
+                        <hr className="servicesLine"></hr>
                     </div>
                 </div>
             </section>
