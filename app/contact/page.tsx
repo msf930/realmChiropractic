@@ -12,7 +12,7 @@ import Footer from "../components/Footer";
 
 import Hero from "@/public/contactHero.jpg";
 
-const FORM_ENDPOINT = process.env.FORM_ENDPOINT;
+const FORM_ENDPOINT = process.env.NEXT_PUBLIC_FORM_ENDPOINT;
 
 const containerStyle = {
     width: '100%',
