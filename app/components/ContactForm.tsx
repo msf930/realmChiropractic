@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 
-const FORM_ENDPOINT = process.env.FORM_ENDPOINT;
+const FORM_ENDPOINT = process.env.NEXT_PUBLIC_FORM_ENDPOINT;
 
 const ContactForm = () => {
   const [submitted, setSubmitted] = useState(false);
