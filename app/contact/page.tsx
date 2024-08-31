@@ -112,7 +112,7 @@ export default function Contact() {
         const form = e.target as HTMLFormElement;
         const formData = new FormData(form);
 
-        fetch(FORM_ENDPOINT, {
+        fetch(`${process.env.NEXT_PUBLIC_FORM_ENDPOINT}`, {
             method: 'POST',
             headers: {
                 Accept: 'application/json',
@@ -190,7 +190,7 @@ export default function Contact() {
                     <div className="contactPageRight">
                         <div className="contactFormContainer">
                             <form
-                                action={FORM_ENDPOINT}
+                                action={`${process.env.NEXT_PUBLIC_FORM_ENDPOINT}`}
                                 onSubmit={handleSubmit}
                                 method="POST"
                                 className="contactForm"
@@ -286,7 +286,7 @@ export default function Contact() {
                 </section>
             </section>
             <section>
-                <LoadScript googleMapsApiKey={process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY}>
+                <LoadScript googleMapsApiKey={`${process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY}`}>
                     <GoogleMap
                         mapContainerStyle={containerStyle}
                         center={center}

@@ -15,7 +15,7 @@ const ContactForm = () => {
 
 
 
-    fetch(process.env.NEXT_PUBLIC_FORM_ENDPOINT, {
+    fetch(`${process.env.NEXT_PUBLIC_FORM_ENDPOINT}`, {
       method: 'POST',
       headers: {
         Accept: 'application/json',
@@ -62,7 +62,7 @@ const ContactForm = () => {
       <div className="contactRight">
         <div className="contactFormContainer">
           <form
-            action={FORM_ENDPOINT}
+            action={`${process.env.NEXT_PUBLIC_FORM_ENDPOINT}`}
             onSubmit={handleSubmit}
             method="POST"
             className="contactForm"
