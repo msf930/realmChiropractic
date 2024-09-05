@@ -682,6 +682,8 @@ body {
   }
   .footerLinkContainer {
     display: flex;
+    flex-direction: column;
+    text-align: center;
     gap: 20px;
   }
   .footerLinkContainer a {
