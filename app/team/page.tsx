@@ -20,7 +20,6 @@ export default function Team() {
             layout="fill"
             objectFit="cover"
             placeholder="blur"
-            sizes="100vh"
           />
         </div>
         <div className="logoFull">
@@ -71,15 +70,17 @@ export default function Team() {
             When Dr. Nick is away from the office, you will find him spending time with Dr. Rachel and their “magic man” of a son, Noah. He also enjoys spending time with friends, gardening, running, practicing American Sign Language, spending time in nature, reading, and playing basketball.              </p>
 
         </div>
-        <div className="team1img">
-          <Image
-            src={Team2}
-            alt="plant"
-            layout="fill"
-            objectFit="cover"
-            placeholder="blur"
+        <div className="teamImg1Cont">
+          <div className="team1img">
+            <Image
+              src={Team2}
+              alt="plant"
+              layout="fill"
+              objectFit="cover"
+              placeholder="blur"
 
-          />
+            />
+          </div>
         </div>
       </section>
       <section>

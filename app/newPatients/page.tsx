@@ -71,11 +71,11 @@ export default function NewPatients() {
                 <div className="newHeroImgContainer">
                     <Image
                         src={Hero}
-                        alt="woman shoulder"
+                        alt="clipboard"
                         layout="fill"
                         objectFit="cover"
                         placeholder="blur"
-                        sizes="100vh"
+
                     />
                 </div>
                 <div className="logoFull">
@@ -102,12 +102,15 @@ export default function NewPatients() {
                 <div className="infoContent">
                     <h2>{displayTitle}</h2>
                     {displayText.map((line, id) => (
-                        <p className="pb-5" key={id}>{line}</p>
+                        <p className="p-5" key={id}>{line}</p>
                     ))}
                     <div className="infoListCont">
                         <ul className="infoList">
                             {displayList[0] !== "" ? displayList.map((item) => (<li key={item}>{item}</li>)) : <></>}
                         </ul>
+                    </div>
+                    <div className="servicesLineCont">
+                        <hr className="servicesLine"></hr>
                     </div>
                 </div>
             </section>

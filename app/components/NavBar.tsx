@@ -39,18 +39,20 @@ const NavBar = () => {
         <header>
             <nav>
                 <div className={header}>
-                    <div className="container px-5 h-full w-full">
+                    <div className="container mx-auto px-3 h-full w-full">
                         <div className="flex justify-between items-center h-full w-full">
                             <div className="flex flex-row items-center gap-1">
-                                <Link href='/'>
-                                    <Image
-                                        src={Logo}
-                                        alt="Realm logo for navagation bar"
-                                        width={150}
-                                        height={100}
-                                    >
-                                    </Image>
-                                </Link>
+                                <div className="navLogoCont">
+                                    <Link href='/'>
+                                        <Image
+                                            src={Logo}
+                                            alt="Realm logo for navagation bar"
+                                            layout="fill"
+                                            objectFit="contain"
+                                        >
+                                        </Image>
+                                    </Link>
+                                </div>
 
                             </div>
                             <div className="flex sm:hidden headerLinkContainer">
@@ -95,7 +97,7 @@ const NavBar = () => {
                                 </li> */}
                             </ul>
 
-                            <div className="flex sm:hidden white" onClick={handleShowNavbar}>
+                            <div className="flex sm:hidden white w-[100px]" onClick={handleShowNavbar}>
                                 <div className={navIcon}>
                                     <span></span>
                                     <span></span>
@@ -109,10 +111,16 @@ const NavBar = () => {
                                             <Link href="/" className="navMenuLink" onClick={handleShowNavbar}>Home</Link>
                                         </li>
                                         <li>
+                                            <Link href="/newPatients" className="navMenuLink" onClick={handleShowNavbar}>New Patients</Link>
+                                        </li>
+                                        <li>
+                                            <Link href="/team" className="navMenuLink" onClick={handleShowNavbar}>Team</Link>
+                                        </li>
+                                        <li>
                                             <Link href="/services" className="navMenuLink" onClick={handleShowNavbar}>Services</Link>
                                         </li>
                                         <li>
-                                            <Link href="/serviceArea" className="navMenuLink" onClick={handleShowNavbar}>Service Area</Link>
+                                            <Link href="/structuralChiro" className="navMenuLink" onClick={handleShowNavbar}>Structural Chiropractic</Link>
                                         </li>
                                         <li>
                                             <Link href="/contact" className="navMenuLink" onClick={handleShowNavbar}>Contact</Link>

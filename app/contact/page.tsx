@@ -5,6 +5,9 @@ import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
+import { IconContext } from "react-icons";
+import { AiFillFacebook, AiOutlineX, AiFillInstagram } from "react-icons/ai";
+
 import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
 
 import ContactForm from "../components/ContactForm";
@@ -12,7 +15,7 @@ import Footer from "../components/Footer";
 
 import Hero from "@/public/contactHero.jpg";
 
-const FORM_ENDPOINT = process.env.NEXT_PUBLIC_FORM_ENDPOINT;
+
 
 const containerStyle = {
     width: '100%',
@@ -172,6 +175,13 @@ export default function Contact() {
 
                         </div>
                     </div>
+                    <IconContext.Provider value={{ color: "white", size: "30px" }}>
+                        <div className="iconGroup">
+                            <Link href={"https://twitter.com/Realmlakewood"}><AiOutlineX /></Link>
+                            <Link href={"https://www.facebook.com/realmlakewood/?fref=ts/"}><AiFillFacebook /></Link>
+                            <Link href={"https://www.instagram.com/realmchiropractic/"}><AiFillInstagram /></Link>
+                        </div>
+                    </IconContext.Provider>
 
                 </section>
                 <section className="contactPage">

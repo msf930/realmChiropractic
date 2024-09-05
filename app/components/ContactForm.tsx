@@ -2,7 +2,10 @@
 
 import React, { useState } from "react";
 
-const FORM_ENDPOINT = process.env.NEXT_PUBLIC_FORM_ENDPOINT;
+import Link from "next/link";
+
+import { IconContext } from "react-icons";
+import { AiFillFacebook, AiOutlineX, AiFillInstagram } from "react-icons/ai";
 
 const ContactForm = () => {
   const [submitted, setSubmitted] = useState(false);
@@ -56,6 +59,13 @@ const ContactForm = () => {
           <p className="contactHeroTextMobile">
             Let us know how we can serve you!
           </p>
+          <IconContext.Provider value={{ color: "white", size: "30px" }}>
+            <div className="iconGroupContact">
+              <Link href={"https://twitter.com/Realmlakewood"}><AiOutlineX /></Link>
+              <Link href={"https://www.facebook.com/realmlakewood/?fref=ts/"}><AiFillFacebook /></Link>
+              <Link href={"https://www.instagram.com/realmchiropractic/"}><AiFillInstagram /></Link>
+            </div>
+          </IconContext.Provider>
         </div>
 
       </div>
@@ -68,7 +78,7 @@ const ContactForm = () => {
             className="contactForm"
           >
             <div className="contactNameContainer">
-              <label htmlFor="nameFirst">Name</label>
+              <label className="contactLabel" htmlFor="nameFirst">Name</label>
               <div className="nameContainer">
                 <div className="nameInputItem">
                   <input
@@ -93,9 +103,10 @@ const ContactForm = () => {
                   />
                 </div>
               </div>
+              <div className="contactSpacer"></div>
             </div>
             <div className="contactInputContainer">
-              <label>Email</label>
+              <label className="contactLabel" >Email</label>
               <div className="contactTextContainer">
                 <div className="textInputItem">
                   <input
@@ -109,9 +120,10 @@ const ContactForm = () => {
                   />
                 </div>
               </div>
+              <div className="contactSpacer"></div>
             </div>
             <div className="contactInputContainer">
-              <label>Phone</label>
+              <label className="contactLabel" >Phone</label>
               <div className="contactTextContainer">
                 <div className="textInputItem">
                   <input
@@ -125,9 +137,10 @@ const ContactForm = () => {
                   />
                 </div>
               </div>
+              <div className="contactSpacer"></div>
             </div>
             <div className="contactInputAreaContainer">
-              <label>Message</label>
+              <label className="contactLabel" >Message</label>
               <div className="contactTextAreaContainer">
                 <div className="textInputItem">
                   <textarea
@@ -140,6 +153,7 @@ const ContactForm = () => {
                   />
                 </div>
               </div>
+
             </div>
 
             <div className="contactSubmitContainer">
@@ -151,6 +165,7 @@ const ContactForm = () => {
               >
                 Submit
               </button>
+              <div className="contactSpacer"></div>
             </div>
           </form>
         </div>

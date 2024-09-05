@@ -27,7 +27,7 @@ export default function Home() {
             layout="fill"
             objectFit="cover"
             placeholder="blur"
-            sizes="100vh"
+          //sizes="100vh"
 
           />
         </div>
@@ -144,7 +144,7 @@ export default function Home() {
                 placeholder='blur'
               />
             </Link>
-            <Link href="/structuralChiropractic" className="servicesItem">
+            <Link href="/structuralChiro" className="servicesItem">
               <h2 className="servicesItemTitle">Structural Chiropractic</h2>
               <Image
                 className="serviceImg"
