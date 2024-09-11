@@ -404,7 +404,7 @@ body {
   .servicesItem {
     position: relative;
     width: 80vw;
-    height: 400px;
+    height: 300px;
   }
   .servicesItemAll {
     display: none;
@@ -767,12 +767,15 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 10px 26px;
+    padding: 10px 20px;
+    font-size: small;
+    padding-left: 40px;
   }
   .infoList {
     column-count: 2;
     column-gap: 30px;
     list-style-type: square;
+    list-style-position: outside;
   }
   .infoContainer2 {
     display: grid;
