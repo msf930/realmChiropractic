@@ -6,13 +6,28 @@ import { useState } from "react";
 import ContactForm from "../components/ContactForm";
 import Footer from "../components/Footer";
 
-import Hero from "@/public/servicesHero.jpg";
+import Hero from "@/public/structuralHero.jpg";
 
 
 
 
 
 export default function NewPatients() {
+    //STRUCTURAL
+    const structuralTitle: string = "What is Structural Chiropractic?";
+    const structuralText: string[] = [
+        "Understand the Basics...",
+        "Most chiropractors are what is known as \"conventional\" chiropractors. What does this mean? Conventional chiropractors focus on goals such as: decreasing muscular spasm, increasing range of motion, and reducing pain. This is how most chiropractors practice, and I believe most of them are great at what they do. It falls under the umbrella category of symptom relief/symptom management.",
+        "Structural Chiropractic",
+        "...Think of your spine as the foundation for a building. If the foundation was off, would you expect the floors to creak, the walls to crack, the windows and doors to break down? Now you can spend time patching all the damage, but you would be doing so with the expectation that in a short time the problems will have to be.....?",
+        "...Repaired Again... and Again...",
+        "And suddenly instead of achieving a true correction, we're relying on chiropractic like a natural (and sometimes expensive) aspirin.",
+        "So Let's Get You Back to Normal!",
+        "Rather than constantly repairing damage, at Realm Chiropractic, we have chosen to fix the underlying Foundation and help your spine reach Normal Structure.",
+        "Of course our services aren't for everyone. However, if you are tired of constantly patching the problem and you're looking for a long term solution that you can both feel AND see for yourself, then Realm Chiropractic may be the right place for you. Once the foundation has been fixed, then we will teach you how to keep it that way through customized recommendations designed for your spine, so that the problem does not return."
+    ];
+    const structuralList: string[][] = [[""]];
+    const structuralText2: string[] = []
 
     //YOGA
     const yogaTitle: string = "Personalized Yoga Sessions";
@@ -115,13 +130,20 @@ export default function NewPatients() {
 
 
 
-    const [displayTitle, setDisplayTitle] = useState(yogaTitle);
-    const [displayText, setDisplayText] = useState(yogaText);
-    const [displayList, setDisplayList] = useState(yogaList);
-    const [displayText2, setDisplayText2] = useState(yogaText2);
+    const [displayTitle, setDisplayTitle] = useState(structuralTitle);
+    const [displayText, setDisplayText] = useState(structuralText);
+    const [displayList, setDisplayList] = useState(structuralList);
+    const [displayText2, setDisplayText2] = useState(structuralText2);
 
-    const [selected, setSelected] = useState(1);
+    const [selected, setSelected] = useState(0);
 
+    const handleButtonClick0 = () => {
+        setDisplayTitle(structuralTitle);
+        setDisplayText(structuralText);
+        setDisplayList(structuralList);
+        setDisplayText2(structuralText2);
+        setSelected(0);
+    };
     const handleButtonClick1 = () => {
         setDisplayTitle(yogaTitle);
         setDisplayText(yogaText);
@@ -205,16 +227,17 @@ export default function NewPatients() {
             <section className="infoContainer2">
                 <div className="infoAside2">
                     <h3>Select Below to Learn More</h3>
-                    <ul>
-                        <li onClick={handleButtonClick1} className={selected === 1 ? "font-semibold" : "font-normal"}>{yogaTitle}</li>
-                        <li onClick={handleButtonClick2} className={selected === 2 ? "font-semibold" : "font-normal"}>{athleticTitle}</li>
-                        <li onClick={handleButtonClick3} className={selected === 3 ? "font-semibold" : "font-normal"}>{kinesioTitle}</li>
-                        <li onClick={handleButtonClick4} className={selected === 4 ? "font-semibold" : "font-normal"}>{nutritionTitle}</li>
-                        <li onClick={handleButtonClick5} className={selected === 5 ? "font-semibold" : "font-normal"}>{healthTitle}</li>
-                        <li onClick={handleButtonClick6} className={selected === 6 ? "font-semibold" : "font-normal"}>{saunaTitle}</li>
-                        <li onClick={handleButtonClick7} className={selected === 7 ? "font-semibold" : "font-normal"}>{myofascialTitle}</li>
-                        <li onClick={handleButtonClick8} className={selected === 8 ? "font-semibold" : "font-normal"}>{cupTitle}</li>
-                    </ul>
+                    <div className="infoAside2List">
+                        <a onClick={handleButtonClick0} className={selected === 0 ? "font-semibold" : "font-normal"}>{structuralTitle}</a>
+                        <a onClick={handleButtonClick1} className={selected === 1 ? "font-semibold" : "font-normal"}>{yogaTitle}</a>
+                        <a onClick={handleButtonClick2} className={selected === 2 ? "font-semibold" : "font-normal"}>{athleticTitle}</a>
+                        <a onClick={handleButtonClick3} className={selected === 3 ? "font-semibold" : "font-normal"}>{kinesioTitle}</a>
+                        <a onClick={handleButtonClick4} className={selected === 4 ? "font-semibold" : "font-normal"}>{nutritionTitle}</a>
+                        <a onClick={handleButtonClick5} className={selected === 5 ? "font-semibold" : "font-normal"}>{healthTitle}</a>
+                        <a onClick={handleButtonClick6} className={selected === 6 ? "font-semibold" : "font-normal"}>{saunaTitle}</a>
+                        <a onClick={handleButtonClick7} className={selected === 7 ? "font-semibold" : "font-normal"}>{myofascialTitle}</a>
+                        <a onClick={handleButtonClick8} className={selected === 8 ? "font-semibold" : "font-normal"}>{cupTitle}</a>
+                    </div>
                 </div>
                 <div className="infoContent2">
                     <h2>{displayTitle}</h2>
@@ -225,8 +248,8 @@ export default function NewPatients() {
                         <ul className="infoList2">
                             {displayList[0][0] !== ""
                                 ?
-                                displayList.map((item) =>
-                                (<li key={item[0]}>
+                                displayList.map((item, itemId) =>
+                                (<li key={itemId}>
                                     <div className="infoListItem2">
                                         <p><b>{item[0]}</b> {item[1]}</p>
                                     </div>

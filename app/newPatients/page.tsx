@@ -91,13 +91,13 @@ export default function NewPatients() {
             <section className="infoContainer">
                 <div className="infoAside">
                     <h3>Select Below to Learn More</h3>
-                    <ul>
-                        <li onClick={handleButtonClick1} className={selected === 1 ? "font-semibold" : "font-normal"}>What is a Spinal Shift?</li>
-                        <li onClick={handleButtonClick2} className={selected === 2 ? "font-semibold" : "font-normal"}>What are My Treatment Options?</li>
-                        <li onClick={handleButtonClick3} className={selected === 3 ? "font-semibold" : "font-normal"}>Common Conditions?</li>
-                        <li onClick={handleButtonClick4} className={selected === 4 ? "font-semibold" : "font-normal"}>Before Your First Exam</li>
-                        <li onClick={handleButtonClick5} className={selected === 5 ? "font-semibold" : "font-normal"}>Complimentary Consultation</li>
-                    </ul>
+                    <div className="infoAsideList">
+                        <a onClick={handleButtonClick1} className={selected === 1 ? "font-semibold" : "font-normal"}>What is a Spinal Shift?</a>
+                        <a onClick={handleButtonClick2} className={selected === 2 ? "font-semibold" : "font-normal"}>What are My Treatment Options?</a>
+                        <a onClick={handleButtonClick3} className={selected === 3 ? "font-semibold" : "font-normal"}>Common Conditions?</a>
+                        <a onClick={handleButtonClick4} className={selected === 4 ? "font-semibold" : "font-normal"}>Before Your First Exam</a>
+                        <a onClick={handleButtonClick5} className={selected === 5 ? "font-semibold" : "font-normal"}>Complimentary Consultation</a>
+                    </div>
                 </div>
                 <div className="infoContent">
                     <h2>{displayTitle}</h2>
@@ -106,7 +106,7 @@ export default function NewPatients() {
                     ))}
                     <div className="infoListCont">
                         <ul className="infoList">
-                            {displayList[0] !== "" ? displayList.map((item) => (<li key={item}>{item}</li>)) : <></>}
+                            {displayList[0] !== "" ? displayList.map((item, id) => (<li key={id}>{item}</li>)) : <></>}
                         </ul>
                     </div>
                     <div className="servicesLineCont">

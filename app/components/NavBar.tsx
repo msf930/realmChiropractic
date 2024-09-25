@@ -80,11 +80,11 @@ const NavBar = () => {
                                         <p>Services</p>
                                     </Link>
                                 </li>
-                                <li>
+                                {/* <li>
                                     <Link href="/structuralChiro">
                                         <p>Structural <br /> Chiropractic</p>
                                     </Link>
-                                </li>
+                                </li> */}
                                 <li>
                                     <Link href="/contact">
                                         <p>Contact</p>
@@ -119,9 +119,9 @@ const NavBar = () => {
                                         <li>
                                             <Link href="/services" className="navMenuLink" onClick={handleShowNavbar}>Services</Link>
                                         </li>
-                                        <li>
+                                        {/* <li>
                                             <Link href="/structuralChiro" className="navMenuLink" onClick={handleShowNavbar}>Structural Chiropractic</Link>
-                                        </li>
+                                        </li> */}
                                         <li>
                                             <Link href="/contact" className="navMenuLink" onClick={handleShowNavbar}>Contact</Link>
                                         </li>
