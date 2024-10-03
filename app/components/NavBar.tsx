@@ -5,8 +5,24 @@ import Link from "next/link";
 import Logo from "../../public/og.png";
 import Image from "next/image";
 
+declare global {
+    interface Window {
+        safari: {
+            pushNotification: unknown
+        }
+    }
+}
 
 const NavBar = () => {
+
+    const isSafari: boolean = /constructor/i.test(window.HTMLElement as unknown as string) ||
+        (function (p: any): boolean {
+            return p && p.toString() === "[object SafariRemoteNotification]";
+        })(!window.safari || (typeof window.safari !== 'undefined' && window.safari?.pushNotification));
+
+
+
+
     const [showNavbar, setShowNavbar] = useState(false);
     const [navIcon, setNavIcon] = useState("nav-icon4");
 
@@ -29,12 +45,30 @@ const NavBar = () => {
         }
     }
 
+
     useEffect(() => {
-        window.addEventListener('scroll', listenScrollEvent);
+        if (isSafari) {
+            setHeader("header2");
+        } else {
+
+            window.addEventListener('scroll', listenScrollEvent);
+        }
 
         return () =>
             window.removeEventListener('scroll', listenScrollEvent);
+
+
     }, []);
+
+    //const isSafari: boolean = /constructor/i.test(window["HTMLElement"])|| (function (p) { return p.toString() === "[object SafariRemoteNotification]"; })(!window['safari'] || (typeof window["safari"] !== 'undefined' && window["safari"].pushNotification));
+
+
+
+
+
+
+
+
     return (
         <header>
             <nav>
@@ -59,33 +93,33 @@ const NavBar = () => {
                                 <a href="tel:+7207223357">720-722-3357</a>
                             </div>
 
-                            <ul className="hidden sm:flex gap-x-6 text-black text-center items-center">
-                                <li>
+                            <ul className="hidden sm:flex text-black text-center items-center">
+                                <li className="mx-3 text-center items-center justify-center">
                                     <Link href="/">
                                         <p>Functional <br /> Correction</p>
                                     </Link>
                                 </li>
-                                <li>
+                                <li className="mx-3 text-center items-center justify-center">
                                     <Link href="/newPatients">
                                         <p>New <br />Patients</p>
                                     </Link>
                                 </li>
-                                <li>
+                                <li className="mx-3 text-center items-center justify-center">
                                     <Link href="/team">
                                         <p>Team</p>
                                     </Link>
                                 </li>
-                                <li>
+                                <li className="mx-3 text-center items-center justify-center">
                                     <Link href="/services">
                                         <p>Services</p>
                                     </Link>
                                 </li>
-                                {/* <li>
-                                    <Link href="/structuralChiro">
-                                        <p>Structural <br /> Chiropractic</p>
+                                <li className="mx-3 text-center items-center justify-center">
+                                    <Link href="/myofascialCupping">
+                                        <p>Myofascial<br />Cupping</p>
                                     </Link>
-                                </li> */}
-                                <li>
+                                </li>
+                                <li className="mx-3 text-center items-center justify-center">
                                     <Link href="/contact">
                                         <p>Contact</p>
                                     </Link>
@@ -122,6 +156,9 @@ const NavBar = () => {
                                         {/* <li>
                                             <Link href="/structuralChiro" className="navMenuLink" onClick={handleShowNavbar}>Structural Chiropractic</Link>
                                         </li> */}
+                                        <li>
+                                            <Link href="/myofascialCupping" className="navMenuLink" onClick={handleShowNavbar}>Myofascial<br />Cupping</Link>
+                                        </li>
                                         <li>
                                             <Link href="/contact" className="navMenuLink" onClick={handleShowNavbar}>Contact</Link>
                                         </li>

@@ -621,7 +621,7 @@ body {
   .contactTextAreaContainer {
     display: flex;
     justify-self: center;
-    justify-content: start;
+    justify-content: flex-start;
     width: 100%;
   }
   .contactInputTextArea {
@@ -719,7 +719,7 @@ body {
   }
   .heroText {
     color: #fff;
-    font-size: xxx-large;
+    font-size: 50px;
     z-index: 10;
     padding: 30px;
     text-align: center;
@@ -842,6 +842,9 @@ body {
 
     list-style-type: square;
     margin-left: 20px;
+  }
+  .infoList2 li {
+    margin-bottom: 20px;
   }
   .infoListItem2 {
     margin-bottom: 20px;
@@ -968,11 +971,28 @@ body {
     padding: 60px 20px;
   }
   .structuralTextCont {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
+  .structuralText h1 {
+    color: #fff;
+    padding-top: 20px;
+    width: 100%;
+    font-size: 30px;
   }
   .structuralText p {
     color: #fff;
     padding-top: 20px;
     width: 100%;
+    text-align: left;
+  }
+  .structuralText li {
+    color: #fff;
+    padding-top: 20px;
+    width: 100%;
+    text-align: left;
   }
   .structuralLine {
     border: 1px solid red;
@@ -1579,7 +1599,7 @@ body {
   }
   .heroText {
     color: #fff;
-    font-size: xxx-large;
+    font-size: 50px;
     z-index: 10;
     padding: 30px;
     text-align: center;
@@ -1667,7 +1687,7 @@ body {
     gap: 16px;
     margin: 0 30px;
   }
-  .infoAside2List a {
+  .infoAside2List button {
     padding-bottom: 10px;
     padding-left: 0;
     padding-right: 0px;
@@ -1696,6 +1716,9 @@ body {
 
     list-style-type: square;
     margin-left: 20px;
+  }
+  .infoList2 li {
+    margin-bottom: 20px;
   }
   .infoListItem2 {
     margin-bottom: 20px;
@@ -1821,11 +1844,28 @@ body {
     padding: 60px 60px;
   }
   .structuralTextCont {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
+  .structuralText h1 {
+    color: #fff;
+    padding-top: 20px;
+    width: 100%;
+    font-size: 30px;
   }
   .structuralText p {
     color: #fff;
     padding-top: 20px;
     width: 100%;
+    text-align: left;
+  }
+  .structuralText li {
+    color: #fff;
+    padding-top: 20px;
+    width: 100%;
+    text-align: left;
   }
   .structuralLine {
     border: 1px solid red;
@@ -2426,7 +2466,7 @@ body {
   }
   .heroText {
     color: #fff;
-    font-size: xxx-large;
+    font-size: 50px;
     z-index: 10;
     padding: 30px;
     text-align: center;
@@ -2455,13 +2495,14 @@ body {
     text-align: left;
     justify-content: start;
   }
-  .infoAsideList a {
+  .infoAsideList button {
     width: 100%;
     padding-bottom: 5px;
     padding-left: 5px;
     cursor: pointer;
     list-style-position: inside;
     list-style-type: decimal;
+    text-align: left;
   }
   .infoContent {
     background-color: #1e1e1e;
@@ -2503,14 +2544,14 @@ body {
     flex-wrap: wrap;
     justify-content: start;
     align-items: start;
-
     margin: 0;
   }
-  .infoAside2List a {
+  .infoAside2List button {
     width: 100%;
     display: block;
     flex-direction: column;
     justify-content: left;
+    text-align: left;
     flex-wrap: wrap;
     padding: 0 5px;
     word-break: normal;
@@ -2549,7 +2590,7 @@ body {
     list-style-type: square;
     margin-left: 20px;
   }
-  .infoListItem2 {
+  .infoList2 li {
     margin-bottom: 20px;
   }
   .servicesLineCont {
@@ -2669,16 +2710,34 @@ body {
     padding: 60px 100px;
   }
   .structuralTextCont {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
+  .structuralText h1 {
+    color: #fff;
+    padding-top: 20px;
+    width: 100%;
+    font-size: 30px;
   }
   .structuralText p {
     color: #fff;
     padding-top: 20px;
     width: 100%;
+    text-align: left;
+  }
+  .structuralText li {
+    color: #fff;
+    padding-top: 20px;
+    width: 100%;
+    text-align: left;
   }
   .structuralLine {
     border: 1px solid red;
     width: 60%;
     margin-top: 50px;
+    margin-bottom: 50px;
   }
   .contactPageCont {
     display: grid;
