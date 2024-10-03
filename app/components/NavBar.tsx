@@ -15,10 +15,7 @@ declare global {
 
 const NavBar = () => {
 
-    const isSafari: boolean = /constructor/i.test(window.HTMLElement as unknown as string) ||
-        (function (p: any): boolean {
-            return p && p.toString() === "[object SafariRemoteNotification]";
-        })(!window.safari || (typeof window.safari !== 'undefined' && window.safari?.pushNotification));
+    
 
 
 
@@ -47,6 +44,11 @@ const NavBar = () => {
 
 
     useEffect(() => {
+        const isSafari: boolean = /constructor/i.test(window.HTMLElement as unknown as string) ||
+        (function (p: any): boolean {
+            return p && p.toString() === "[object SafariRemoteNotification]";
+        })(!window.safari || (typeof window.safari !== 'undefined' && window.safari?.pushNotification));
+
         if (isSafari) {
             setHeader("header2");
         } else {
@@ -58,7 +60,7 @@ const NavBar = () => {
             window.removeEventListener('scroll', listenScrollEvent);
 
 
-    }, [isSafari]);
+    }, []);
 
     //const isSafari: boolean = /constructor/i.test(window["HTMLElement"])|| (function (p) { return p.toString() === "[object SafariRemoteNotification]"; })(!window['safari'] || (typeof window["safari"] !== 'undefined' && window["safari"].pushNotification));
 
