@@ -127,7 +127,17 @@ export default function NewPatients() {
                     <h3>Select Below to Learn More</h3>
                     <div className="infoAside2List">
                         {contentCards.map((cardItem: any) => (
-                            <button key={cardItem.key} onClick={() => handleContentChange(`${cardItem.key}`)} className={card.key === `${cardItem.key}` ? "font-semibold" : "font-normal"}>{cardItem.title}</button>
+                            <button 
+                                key={cardItem.key} 
+                                onClick={() => handleContentChange(`${cardItem.key}`)} 
+                                className={
+                                    card.key === `${cardItem.key}` 
+                                    ? 
+                                    "font-semibold" 
+                                    : 
+                                    "font-normal"}>
+                                        {cardItem.title}
+                            </button>
                         ))}
                     </div>
                 </div>

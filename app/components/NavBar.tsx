@@ -159,7 +159,7 @@ const NavBar = () => {
                                             <Link href="/structuralChiro" className="navMenuLink" onClick={handleShowNavbar}>Structural Chiropractic</Link>
                                         </li> */}
                                         <li>
-                                            <Link href="/myofascialCupping" className="navMenuLink" onClick={handleShowNavbar}>Myofascial<br />Cupping</Link>
+                                            <Link href="/myofascialCupping" className="navMenuLink" onClick={handleShowNavbar}>Myofascial Cupping</Link>
                                         </li>
                                         <li>
                                             <Link href="/contact" className="navMenuLink" onClick={handleShowNavbar}>Contact</Link>

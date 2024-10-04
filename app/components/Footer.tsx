@@ -30,9 +30,9 @@ export default function Footer() {
                 </div>
                 <IconContext.Provider value={{ color: "white", size: "17px" }}>
                     <div className="iconGroup">
-                        <Link href={"https://twitter.com/Realmlakewood"}><AiOutlineX /></Link>
-                        <Link href={"https://www.facebook.com/realmlakewood/?fref=ts/"}><AiFillFacebook /></Link>
-                        <Link href={"https://www.instagram.com/realmchiropractic/"}><AiFillInstagram /></Link>
+                        <Link className="footerIcon" href={"https://twitter.com/Realmlakewood"}><AiOutlineX /></Link>
+                        <Link className="footerIcon" href={"https://www.facebook.com/realmlakewood/?fref=ts/"}><AiFillFacebook /></Link>
+                        <Link className="footerIcon" href={"https://www.instagram.com/realmchiropractic/"}><AiFillInstagram /></Link>
                     </div>
                 </IconContext.Provider>
             </div>

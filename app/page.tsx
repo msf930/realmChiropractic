@@ -53,7 +53,7 @@ export default function Home() {
         <div className="func1img">
           <Image
             src={Functional1}
-            alt="man shoulder"
+            alt="neck adjustment"
             layout="fill"
             objectFit="cover"
             placeholder="blur"
@@ -94,7 +94,7 @@ export default function Home() {
         <div className="func2img">
           <Image
             src={Functional2}
-            alt="man shoulder"
+            alt="back adjustment"
             layout="fill"
             objectFit="cover"
             placeholder="blur"

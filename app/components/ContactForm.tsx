@@ -61,9 +61,9 @@ const ContactForm = () => {
           </p>
           <IconContext.Provider value={{ color: "white", size: "30px" }}>
             <div className="iconGroupContact">
-              <Link href={"https://twitter.com/Realmlakewood"}><AiOutlineX /></Link>
-              <Link href={"https://www.facebook.com/realmlakewood/?fref=ts/"}><AiFillFacebook /></Link>
-              <Link href={"https://www.instagram.com/realmchiropractic/"}><AiFillInstagram /></Link>
+              <Link className="icon" href={"https://twitter.com/Realmlakewood"}><AiOutlineX /></Link>
+              <Link className="icon" href={"https://www.facebook.com/realmlakewood/?fref=ts/"}><AiFillFacebook /></Link>
+              <Link className="icon" href={"https://www.instagram.com/realmchiropractic/"}><AiFillInstagram /></Link>
             </div>
           </IconContext.Provider>
         </div>
