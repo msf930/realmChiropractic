@@ -832,6 +832,9 @@ body {
     cursor: pointer;
     list-style-position: inside;
     list-style-type: none;
+    position: relative;
+    z-index: 10;
+    pointer-events: auto;
   }
   .infoContent2 {
     background-color: #1e1e1e;
@@ -1733,6 +1736,9 @@ body {
     list-style-type: disc;
     word-break: break-all;
     list-style-position: outside;
+    position: relative;
+    z-index: 10;
+    pointer-events: auto;
   }
   .infoContent2 {
     background-color: #1e1e1e;
@@ -2611,6 +2617,9 @@ body {
     padding: 0 5px;
     padding-bottom: 16px;
     word-break: normal;
+    position: relative;
+    z-index: 10;
+    pointer-events: auto;
   }
 
   .infoAside2 h3 {
