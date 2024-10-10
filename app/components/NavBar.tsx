@@ -116,11 +116,11 @@ const NavBar = () => {
                                         <p>Services</p>
                                     </Link>
                                 </li>
-                                <li className="mx-3 text-center items-center justify-center">
+                                {/* <li className="mx-3 text-center items-center justify-center">
                                     <Link href="/myofascialCupping">
                                         <p>Myofascial<br />Cupping</p>
                                     </Link>
-                                </li>
+                                </li> */}
                                 <li className="mx-3 text-center items-center justify-center">
                                     <Link href="/contact">
                                         <p>Contact</p>
@@ -158,9 +158,9 @@ const NavBar = () => {
                                         {/* <li>
                                             <Link href="/structuralChiro" className="navMenuLink" onClick={handleShowNavbar}>Structural Chiropractic</Link>
                                         </li> */}
-                                        <li>
+                                        {/* <li>
                                             <Link href="/myofascialCupping" className="navMenuLink" onClick={handleShowNavbar}>Myofascial Cupping</Link>
-                                        </li>
+                                        </li> */}
                                         <li>
                                             <Link href="/contact" className="navMenuLink" onClick={handleShowNavbar}>Contact</Link>
                                         </li>

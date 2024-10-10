@@ -130,6 +130,29 @@ const contentCards: any = [
             "To schedule or for questions, call our office! Sessions will be up to an hour.  Please bring proper attire such as a workout outfit or bathing suit, water, and a towel."
 
         ],
+    },
+    {
+        key: "cupping",
+        title: "Myofascial Gliding and Static Cupping",
+        text: [
+            "At Realm Chiropractic, we offer gliding and static cupping as part of our comprehensive chiropractic care services. Cupping therapy, an ancient technique, enhances our ability to treat a variety of conditions and improve overall well-being. Our approach includes:"
+        ],
+        list: [
+            ["Gliding Cupping: ", "This technique involves moving the cups across the skin to promote increased blood flow, reduce muscle tension and enhance mobility. It's particularly effective for addressing larger muscle groups and areas with significant tension"],
+            ["Static Cupping: ", "In this method, cups are placed on specific points and left static for a duration. This helps to relieve deep-seated muscle tension, improve circulation, and promote relaxation and healing."],
+           
+        ],
+        text2: [],
+        title2: "Benefits of Cupping Therapy",
+        list2: [
+            ["Enhanced Circulation: ", "Cupping increases blood flow to targeted areas, aiding in the delivery of oxygen and nutrients to tissues and promoting faster healing."],
+            ["Pain Relief: ", "Both gliding and static cupping can effectively reduce muscle pain and stiffness by alleviating muscle knots and improving tissue elasticity."],
+            ["Detoxification: ", "Cupping helps to draw out toxins and waste products from the tissues, promoting detoxification and overall wellness."],
+            ["Relaxation and Stress Reduction: ", "The therapeutic effects of cupping promote relaxation and reduce stress, complementing the benefits of chiropractic adjustments."],
+            ["Improved Mobility: ", "By reducing muscle tension and enhancing flexibility, cupping can improve your range of motion and overall mobility."],
+        ],
+        text3: "Our cupping therapy is designed to work synergistically with functional correction chiropractic care, offering a holistic approach to your health and well-being. Whether you're dealing with chronic pain, recovering from an injury, or looking to enhance your overall wellness, our integrated treatments can help you achieve your health goals."
+        
     }
 ]
 function getCardByKey(key: string) {
@@ -191,6 +214,12 @@ export default function NewPatients() {
                     <div className="servicesLineCont">
                         <hr className="servicesLine"></hr>
                     </div>
+                    {card.title2 ? <h2>{card.title2}</h2> : <></> }
+                    <div className="infoList2">
+                        {card.list2 ? card.list2.map((item: any, id: any) => (<li key={id}><b>{item[0]}</b>{item[1]}</li>)) : <></>}
+                    </div>
+                    {card.text3 ? <p className="mb-5 mx-5">{card.text3} </p> : <></>}
+                    {card.title2 ?  <div className="servicesLineCont"><hr className="servicesLine"></hr> </div> : <></>}
                 </div>
             </section>
             <section>
