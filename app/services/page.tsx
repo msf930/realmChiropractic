@@ -177,6 +177,7 @@ export default function NewPatients() {
                         objectFit="cover"
                         placeholder="blur"
                         sizes="100vh"
+                        unoptimized={true}
                     />
                 </div>
                 <div className="logoFull">

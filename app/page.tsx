@@ -27,6 +27,8 @@ export default function Home() {
             layout="fill"
             objectFit="cover"
             placeholder="blur"
+            unoptimized={true}
+            priority={true}
           //sizes="100vh"
 
           />
@@ -40,6 +42,7 @@ export default function Home() {
               layout="fill"
               objectFit="contain"
               objectPosition="center"
+              unoptimized={true}
 
             />
 
@@ -57,6 +60,7 @@ export default function Home() {
             layout="fill"
             objectFit="cover"
             placeholder="blur"
+            unoptimized={true}
 
           />
         </div>
@@ -98,6 +102,7 @@ export default function Home() {
             layout="fill"
             objectFit="cover"
             placeholder="blur"
+            unoptimized={true}
 
           />
         </div>
@@ -118,6 +123,7 @@ export default function Home() {
                 objectFit="cover"
                 objectPosition="center"
                 placeholder='blur'
+                unoptimized={true}
               />
             </Link>
             <Link href="/team" className="servicesItem">
@@ -130,6 +136,7 @@ export default function Home() {
                 objectFit="cover"
                 objectPosition="center"
                 placeholder='blur'
+                unoptimized={true}
               />
             </Link>
             <Link href="/services" className="servicesItem">
@@ -142,6 +149,7 @@ export default function Home() {
                 objectFit="cover"
                 objectPosition="center"
                 placeholder='blur'
+                unoptimized={true}
               />
             </Link>
             <Link href="/structuralChiro" className="servicesItem">
@@ -154,6 +162,7 @@ export default function Home() {
                 objectFit="cover"
                 objectPosition="center"
                 placeholder='blur'
+                unoptimized={true}
               />
             </Link>
           </div>

@@ -146,6 +146,7 @@ export default function Contact() {
                         objectFit="cover"
                         placeholder="blur"
                         sizes="100vh"
+                        unoptimized={true}
                     />
                 </div>
                 <div className="logoFull">
