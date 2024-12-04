@@ -146,6 +146,7 @@ export default function Contact() {
                         objectFit="cover"
                         placeholder="blur"
                         sizes="100vh"
+                        priority={true}
                         unoptimized={true}
                     />
                 </div>

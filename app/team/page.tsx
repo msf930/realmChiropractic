@@ -20,6 +20,8 @@ export default function Team() {
             layout="fill"
             objectFit="cover"
             placeholder="blur"
+            unoptimized={true}
+            priority={true}
           />
         </div>
         <div className="logoFull">

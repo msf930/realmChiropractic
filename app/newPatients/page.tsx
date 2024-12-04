@@ -119,6 +119,7 @@ export default function NewPatients() {
                         layout="fill"
                         objectFit="cover"
                         placeholder="blur"
+                        priority={true}
                         unoptimized={true}
                     />
                 </div>
