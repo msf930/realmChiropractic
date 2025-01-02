@@ -92,7 +92,7 @@ const NavBar = () => {
 
                             </div>
                             <div className="flex sm:hidden headerLinkContainer">
-                                <a href="tel:+7207223357">720-722-3357</a>
+                                <a href="tel:+17207223357">720-722-3357</a>
                             </div>
 
                             <ul className="hidden sm:flex text-black text-center items-center">
