@@ -129,7 +129,7 @@ export default function NewPatients() {
 
                     </div>
                     <div className="heroCTA">
-                        <a href="tel:+7207223357">Call Now: 720-722-3357</a>
+                        <a href="tel:+17207223357">Call Now: 720-722-3357</a>
                     </div>
                 </div>
             </section>

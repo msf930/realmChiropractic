@@ -156,7 +156,7 @@ export default function Contact() {
 
                     </div>
                     <div className="heroCTA">
-                        <a href="tel:+7207223357">Call Now: 720-722-3357</a>
+                        <a href="tel:+17207223357">Call Now: 720-722-3357</a>
                     </div>
                 </div>
             </section>
@@ -171,8 +171,8 @@ export default function Contact() {
                             <h3>Address:</h3>
                         </div>
                         <div>
-                            <h3>720-722-3357</h3>
-                            <h3>realmlakewood@gmail.com</h3>
+                            <a href="tel:+17207223357"><h3>720-722-3357</h3></a>
+                            <a href="mailto:example@example.com"><h3>realmlakewood@gmail.com</h3></a>
                             <h3>Realm Chiropractic <br></br> 98 Wadsworth Blvd.<br></br>Lakewood, CO 80226</h3>
 
                         </div>

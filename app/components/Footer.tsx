@@ -25,7 +25,7 @@ export default function Footer() {
                 </div>
 
                 <div className="footerLinkContainer">
-                    <a href="tel:+7207223357">720-722-3357</a>
+                    <a href="tel:+17207223357">720-722-3357</a>
                     <a href="mailto:realmlakewood@gmail.com">realmlakewood@gmail.com</a>
                 </div>
                 <IconContext.Provider value={{ color: "white", size: "17px" }}>
