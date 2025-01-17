@@ -21,8 +21,8 @@ export default function RootLayout({
         <meta name="theme-color" content="#1e1e1e" />
       </head>
       <body className={inter.className}>
-        <NavBar />
-        {children}
+      <NavBar/>
+      {children}
       </body>
     </html>
   );

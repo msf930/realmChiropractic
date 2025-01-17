@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { useState } from "react";
 
-import ContactForm from "../components/ContactForm";
+import ContactFormNew from "../components/ContactFormNew";
 import Footer from "../components/Footer";
 
 import Hero from "@/public/newPatients.jpg";
@@ -182,7 +182,7 @@ export default function NewPatients() {
                 </div>
             </section>
             <section>
-                <ContactForm />
+                <ContactFormNew />
             </section>
             <section>
                 <Footer />

@@ -650,6 +650,17 @@ body {
     -webkit-appearance: none;
     -webkit-border-radius: 0;
   }
+  .captchaContainer{
+    display: grid;
+    grid-template-columns: 2fr 9fr;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 24px;
+  }
+  .captcha{
+    justify-self: center;
+
+  }
   .contactSubmitContainer {
     display: grid;
     grid-template-columns: 2fr 9fr;
@@ -1560,6 +1571,17 @@ body {
     -webkit-appearance: none;
     -webkit-border-radius: 0;
   }
+  .captchaContainer{
+    display: grid;
+    grid-template-columns: 2fr 9fr;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  .captcha{
+    justify-self: center;
+
+  }
   .contactSubmitContainer {
     display: grid;
     grid-template-columns: 2fr 9fr;
@@ -2446,7 +2468,7 @@ body {
     grid-template-columns: 2fr 9fr;
     justify-content: center;
     align-items: start;
-    margin-bottom: 24px;
+    margin-bottom: 10px;
   }
   .contactInputAreaContainer label {
     justify-self: start;
@@ -2466,6 +2488,17 @@ body {
     border-bottom: 2px solid #fff;
     -webkit-appearance: none;
     -webkit-border-radius: 0;
+  }
+  .captchaContainer{
+    display: grid;
+    grid-template-columns: 2fr 9fr;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  .captcha{
+    justify-self: center;
+
   }
   .contactSubmitContainer {
     display: grid;

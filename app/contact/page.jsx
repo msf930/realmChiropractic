@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useState } from "react";
+import React, {useRef, useState, useEffect} from "react";
 
 import Image from "next/image";
 import Link from "next/link";
@@ -10,10 +10,11 @@ import { AiFillFacebook, AiOutlineX, AiFillInstagram } from "react-icons/ai";
 
 import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
 
-import ContactForm from "../components/ContactForm";
+
 import Footer from "../components/Footer";
 
 import Hero from "@/public/contactHero.jpg";
+import HCaptcha from "@hcaptcha/react-hcaptcha";
 
 
 
@@ -110,31 +111,39 @@ const mapStyle = [
 
 export default function Contact() {
     const [submitted, setSubmitted] = useState(false);
-    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-        e.preventDefault();
-        const form = e.target as HTMLFormElement;
+    const [result, setResult] = useState(["", ""]);
+    const [token, setToken] = useState(null);
+    const captchaRef = useRef(null);
+
+    useEffect(() => {
+
+        if (token)
+            console.log(`hCaptcha Token: ${token}`);
+
+    }, [token]);
+
+    const onSubmit = async (e) => {
+        setSubmitted(true);
+        setResult(["Please Wait", "Sending...."]);
+        const form = e.target;
         const formData = new FormData(form);
+        formData.append("access_key", `${process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY}`);
+        const response = await fetch("https://api.web3forms.com/submit", {
+            method: "POST",
+            body: formData
+        });
+        const data = await response.json();
 
-        fetch(`${process.env.NEXT_PUBLIC_FORM_ENDPOINT}`, {
-            method: 'POST',
-            headers: {
-                Accept: 'application/json',
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(formData),
-        })
-            .then((response) => {
-                if (!response.ok) {
-                    throw new Error('Form response was not ok');
-                }
+        if (data.success) {
+            setResult(["Thank You!", "Form Submitted Successfully"]);
+        } else {
+            console.log("Error", data);
+            setResult(["Error", `${data.message}`]);
+        }
 
-                setSubmitted(true);
-            })
-            .catch((err) => {
-                // Submit the form manually
-                form.submit();
-            });
     };
+
+
     return (
         <div>
             <section className="hero">
@@ -186,10 +195,21 @@ export default function Contact() {
                     </IconContext.Provider>
 
                 </section>
-                <section className="contactPage">
-                    <div className="contactPageLeft">
+                {submitted
+                    ?
+                    <div className="contactSubmited">
+                        <div className="contactSubmitedTitle">{result[0]}</div>
+                        <div className="contactSubmitedBody">{result[1]}</div>
+                        <button className="w-[100%] justify-center items-center py-3 text-white"
+                                onClick={() => setSubmitted(false)}>Reset
+                        </button>
+                    </div>
+                    :
+                    <section className="contactPage">
+
+                        <div className="contactPageLeft">
                         <div className="contactHeroTextContainer">
-                            <h2>Send us a message</h2>
+                        <h2>Send us a message</h2>
                             <p className="contactHeroTextFull">
                                 Let us know how we can serve you!
                             </p>
@@ -202,9 +222,7 @@ export default function Contact() {
                     <div className="contactPageRight">
                         <div className="contactFormContainer">
                             <form
-                                action={`${process.env.NEXT_PUBLIC_FORM_ENDPOINT}`}
-                                onSubmit={handleSubmit}
-                                method="POST"
+                                onSubmit={onSubmit}
                                 className="contactForm"
                             >
                                 <div className="contactNameContainer">
@@ -281,7 +299,21 @@ export default function Contact() {
                                         </div>
                                     </div>
                                 </div>
-
+                                <div className="captchaContainer">
+                                    <div></div>
+                                    <div className="captcha">
+                                        <HCaptcha
+                                            sitekey={process.env.NEXT_PUBLIC_HCAPTCHA_SITE_KEY}
+                                            // onLoad={onLoad}
+                                            onVerify={setToken}
+                                            ref={captchaRef}
+                                            reCaptchaCompat={false}
+                                            size="compact"
+                                            theme="dark"
+                                        />
+                                    </div>
+                                    <div className="contactSpacer"></div>
+                                </div>
                                 <div className="contactSubmitContainer">
                                     <div></div>
                                     <button
@@ -296,6 +328,7 @@ export default function Contact() {
                         </div>
                     </div>
                 </section>
+                }
             </section>
             <section>
                 <LoadScript googleMapsApiKey={`${process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY}`}>
@@ -307,12 +340,12 @@ export default function Contact() {
                             styles: mapStyle,
                         }}
                     >
-                        <Marker position={center} />
+                        <Marker position={center}/>
                     </GoogleMap>
                 </LoadScript>
             </section>
             <section>
-                <Footer />
+                <Footer/>
             </section>
         </div>
     );
