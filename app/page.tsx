@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import Carousel from "./components/Carousel";
-import ContactFormNew from "./components/ContactFormNew.jsx";
+import ContactForm from "./components/ContactForm";
 import Footer from "./components/Footer";
 
 import Hero from "@/public/Hero.jpg";
@@ -180,7 +180,7 @@ export default function Home() {
         <Carousel />
       </section>
       <section>
-        <ContactFormNew />
+        <ContactForm/>
       </section>
       <section>
         <Footer />

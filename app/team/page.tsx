@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 
-import ContactFormNew from "../components/ContactFormNew";
+import ContactForm from "../components/ContactForm";
 import Footer from "../components/Footer";
 
 import Hero from "@/public/teamHero.jpg";
@@ -93,7 +93,7 @@ export default function Team() {
         </div>
       </section>
       <section>
-        <ContactFormNew />
+        <ContactForm />
       </section>
       <section>
         <Footer />
