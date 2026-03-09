@@ -5,15 +5,15 @@ import Carousel from "./components/Carousel";
 import ContactFormNew from "./components/ContactFormNew.jsx";
 import Footer from "./components/Footer";
 
-import Hero from '../public/Hero.jpg';
-import Logo from "../public/og.png";
-import Functional1 from "../public/functional1.jpg"
-import Functional2 from "../public/functional2.jpg"
-import New from "../public/new.jpg"
-import Team from "../public/team.jpg"
-import Spine from "../public/spine.jpg"
-import Services from "../public/services.jpg"
-
+import Hero from "@/public/Hero.jpg";
+import Logo from "@/public/og.png";
+import Functional1 from "@/public/functional1.jpg";
+import Functional2 from "@/public/functional2.jpg";
+import New from "@/public/new.jpg";
+import Team from "@/public/team.jpg";
+import Spine from "@/public/spine.jpg";
+import Services from "@/public/services.jpg";
+// Public folder images: use path strings so build works. Add Hero.jpg, og.png, etc. to /public as needed.
 
 
 export default function Home() {
@@ -36,7 +36,7 @@ export default function Home() {
         <div className="logoFull">
           <div className="logoContainer">
             <Image
-              className="heroLogo"
+              // className="heroLogo"
               src={Logo}
               alt="Realm logo"
               layout="fill"
@@ -50,6 +50,7 @@ export default function Home() {
           <div className="heroCTA">
             <a href="tel:+17207223357">Call Now: 720-722-3357</a>
           </div>
+
         </div>
       </section>
       <section className="func1Cont">
@@ -111,6 +112,13 @@ export default function Home() {
         <div className="servicesContainer">
           <div className="servicesTitle">
             <h1>Quick Links</h1>
+          </div>
+            <div className="mx-3 text-center items-center justify-center border-2 border-white color-white px-4 py-2 mb-[40px]">
+              <Link href="/contact">
+                <p className="text-white">Book Now</p>
+              </Link>
+            </div>
+          <div className="servicesItemContainer">
           </div>
           <div className="servicesItemContainer">
             <Link href="/newPatients" className="servicesItem">

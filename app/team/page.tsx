@@ -6,7 +6,7 @@ import ContactFormNew from "../components/ContactFormNew";
 import Footer from "../components/Footer";
 
 import Hero from "@/public/teamHero.jpg";
-import Team1 from "@/public/team1.jpg"
+import Team1 from "@/public/RachelHeadshot.jpg"
 import Team2 from "@/public/team2.jpg"
 
 export default function Team() {
@@ -25,14 +25,21 @@ export default function Team() {
           />
         </div>
         <div className="logoFull">
-          <div className="heroText">
-            <h1>Our Team</h1>
+                    <div className="heroText">
+                        <h1>Meet Our Team</h1>
 
-          </div>
-          <div className="heroCTA">
-            <a href="tel:+17207223357">Call Now: 720-722-3357</a>
-          </div>
-        </div>
+                    </div>
+                    <div className="heroCTAContainer">
+                        <Link href="tel:+7207223357" className="heroCTATop">
+                            <p>Lakewood:</p>
+                            <span>720-722-3357</span>
+                        </Link>
+                        <Link href="tel:+7207223357" className="heroCTABottom">
+                            <p>Arvada:</p>
+                            <span>720-722-3357</span>
+                        </Link>
+                    </div>
+                </div> 
       </section>
       <section className="teamCont">
         <div className="teamImgCont">

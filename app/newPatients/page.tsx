@@ -7,6 +7,7 @@ import ContactFormNew from "../components/ContactFormNew";
 import Footer from "../components/Footer";
 
 import Hero from "@/public/newPatients.jpg";
+import Link from "next/link";
 import newPatient1 from "@/public/newPatient1.jpg";
 import newPatient2 from "@/public/newPatient2.jpg";
 import newPatient3 from "@/public/newPatient3.jpg";
@@ -23,6 +24,7 @@ const contentCards: any = [
             "Spinal Shifts can occur due to a childhood fall, a sports injury, an automobile accident, repetitive stresses (such as sitting at a desk for hours per day), or a variety of other seemingly innocuous injuries."
         ],
         image: newPatient1,
+        image: newPatient1,
     },
     {
         key: "options",
@@ -33,6 +35,7 @@ const contentCards: any = [
             "When those do not work, more invasive procedures like surgery start to fall into the picture. All of these treatment programs are effective in the appropriate time and place and have different goals.",
             "Our goal at Realm Chiropractic is to restore the structural integrity of your spine. Dr. Nick and Dr. Rachel have built excellent relationships with the best health care providers throughout the community. If during the consultation we find that Realm Chiropractic is not right for you, we will make sure to find the best practitioner to help resolve your specific condition."
         ],
+        image: newPatient2,
         image: newPatient2,
     },
     {
@@ -63,6 +66,7 @@ const contentCards: any = [
             "Insomnia"
         ],
         image: newPatient3,
+        image: newPatient3,
     },
     {
         key: "exam",
@@ -76,6 +80,7 @@ const contentCards: any = [
             "***Please be prepared to dress appropriately for the examination. For the exam you will be in a gown from the waist up.  Wear something comfortable for the waist down such as athletic pants or shorts or yoga pants or shorts.  You can wear athletic shoes, socks or be barefoot for the exam.",
             "After the examination, if a spinal shift has been confirmed, a follow up conference to review the results will be scheduled. Dr. Rachel or Dr. Nick will discuss the nature of your specific spinal shift, care options, and deliver your first structural correction."
         ],
+        image: newPatient4,
         image: newPatient4,
     },
     {
@@ -93,6 +98,7 @@ const contentCards: any = [
             "- Automatic Operating System Anaylsis",
             "To be very clear, there is NO CHARGE for our consultation. We do not feel right charging for a conversation.",
             "To Schedule Your Appointment at our Lakewood chiropractic office, please call 720.722.3357 or fill out the form below and we will contact you promptly!"],
+        image: newPatient5,
         image: newPatient5,
     },
 ];
@@ -128,10 +134,17 @@ export default function NewPatients() {
                         <h1>New Patients</h1>
 
                     </div>
-                    <div className="heroCTA">
-                        <a href="tel:+17207223357">Call Now: 720-722-3357</a>
+                    <div className="heroCTAContainer">
+                        <Link href="tel:+7207223357" className="heroCTATop">
+                            <p>Lakewood:</p>
+                            <span>720-722-3357</span>
+                        </Link>
+                        <Link href="tel:+7207223357" className="heroCTABottom">
+                            <p>Arvada:</p>
+                            <span>720-722-3357</span>
+                        </Link>
                     </div>
-                </div>
+                </div>  
             </section>
             <section className="infoContainer2">
                 <div className="infoAside2">
@@ -164,6 +177,20 @@ export default function NewPatients() {
                     </div>
                     <div className="servicesLineCont">
                         <hr className="servicesLine"></hr>
+                    </div>
+                    <div className="infoImgCont">
+                        <div className="infoImg">
+                            <Image
+                                src={card?.image}
+                                alt="clipboard"
+                                layout="fill"
+                                objectFit="contain"
+                                placeholder="blur"
+                                objectPosition="center"
+                                unoptimized={true}
+
+                            />
+                        </div>
                     </div>
                     <div className="infoImgCont">
                         <div className="infoImg">

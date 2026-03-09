@@ -13,14 +13,19 @@ declare global {
     }
 }
 
+const getIsSafari = (): boolean => {
+    if (typeof window === "undefined") return false;
+    return (
+        /constructor/i.test(window.HTMLElement as unknown as string) ||
+        (function (p: unknown): boolean {
+            return !!p && (p as { toString(): string }).toString() === "[object SafariRemoteNotification]";
+        })(typeof window.safari !== "undefined" ? window.safari.pushNotification : undefined)
+    );
+};
+
 const NavBar = () => {
-
-    
-
-
-
-
     const [showNavbar, setShowNavbar] = useState(false);
+    const [isSafari, setIsSafari] = useState(false);
     const [navIcon, setNavIcon] = useState("nav-icon4");
 
     const handleShowNavbar = () => {
@@ -44,23 +49,18 @@ const NavBar = () => {
 
 
     useEffect(() => {
-        const isSafari: boolean = /constructor/i.test(window.HTMLElement as unknown as string) ||
-        (function (p: any): boolean {
-            return p && p.toString() === "[object SafariRemoteNotification]";
-        })(!window.safari || (typeof window.safari !== 'undefined' && window.safari?.pushNotification));
+        setIsSafari(getIsSafari());
+    }, []);
 
+    useEffect(() => {
+        if (typeof window === "undefined") return;
         if (isSafari) {
             setHeader("header2");
         } else {
-
-            window.addEventListener('scroll', listenScrollEvent);
+            window.addEventListener("scroll", listenScrollEvent);
         }
-
-        return () =>
-            window.removeEventListener('scroll', listenScrollEvent);
-
-
-    }, []);
+        return () => window.removeEventListener("scroll", listenScrollEvent);
+    }, [isSafari]);
 
     //const isSafari: boolean = /constructor/i.test(window["HTMLElement"])|| (function (p) { return p.toString() === "[object SafariRemoteNotification]"; })(!window['safari'] || (typeof window["safari"] !== 'undefined' && window["safari"].pushNotification));
 
@@ -92,7 +92,11 @@ const NavBar = () => {
 
                             </div>
                             <div className="flex sm:hidden headerLinkContainer">
-                                <a href="tel:+17207223357">720-722-3357</a>
+                                <div className="mx-3 text-center items-center justify-center border-2 border-white  px-4 py-2">
+                                    <Link href="/contact">
+                                        <p>Book Now</p>
+                                    </Link>
+                                </div>
                             </div>
 
                             <ul className="hidden sm:flex text-black text-center items-center">
@@ -107,6 +111,11 @@ const NavBar = () => {
                                     </Link>
                                 </li>
                                 <li className="mx-3 text-center items-center justify-center">
+                                    <Link href="/locations">
+                                        <p>Locations</p>
+                                    </Link>
+                                </li>
+                                <li className="mx-3 text-center items-center justify-center">
                                     <Link href="/team">
                                         <p>Team</p>
                                     </Link>
@@ -117,13 +126,14 @@ const NavBar = () => {
                                     </Link>
                                 </li>
                                 {/* <li className="mx-3 text-center items-center justify-center">
+                                {/* <li className="mx-3 text-center items-center justify-center">
                                     <Link href="/myofascialCupping">
                                         <p>Myofascial<br />Cupping</p>
                                     </Link>
                                 </li> */}
-                                <li className="mx-3 text-center items-center justify-center">
+                                <li className="mx-3 text-center items-center justify-center border-2 border-white  px-4 py-2">
                                     <Link href="/contact">
-                                        <p>Contact</p>
+                                        <p>Book Now</p>
                                     </Link>
                                 </li>
                                 {/* <li>
@@ -150,6 +160,9 @@ const NavBar = () => {
                                             <Link href="/newPatients" className="navMenuLink" onClick={handleShowNavbar}>New Patients</Link>
                                         </li>
                                         <li>
+                                            <Link href="/locations" className="navMenuLink" onClick={handleShowNavbar}>Locations</Link>
+                                        </li>
+                                        <li>
                                             <Link href="/team" className="navMenuLink" onClick={handleShowNavbar}>Team</Link>
                                         </li>
                                         <li>
@@ -159,10 +172,10 @@ const NavBar = () => {
                                             <Link href="/structuralChiro" className="navMenuLink" onClick={handleShowNavbar}>Structural Chiropractic</Link>
                                         </li> */}
                                         {/* <li>
-                                            <Link href="/myofascialCupping" className="navMenuLink" onClick={handleShowNavbar}>Myofascial Cupping</Link>
+                                            <Link href="/myofascialCupping" className="navMenuLink" onClick={handleShowNavbar}>Myofascial<br />Cupping</Link>
                                         </li> */}
                                         <li>
-                                            <Link href="/contact" className="navMenuLink" onClick={handleShowNavbar}>Contact</Link>
+                                            <Link href="/contact" className="navMenuLinkBook" onClick={handleShowNavbar}>Book Now</Link>
                                         </li>
 
                                     </ul>

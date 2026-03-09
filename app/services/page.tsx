@@ -7,7 +7,7 @@ import ContactFormNew from "../components/ContactFormNew";
 import Footer from "../components/Footer";
 
 import Hero from "@/public/structuralHero.jpg";
-
+import Link from "next/link";
 const contentCards: any = [
     {
         key: "structural",
@@ -112,26 +112,6 @@ const contentCards: any = [
         ],
     },
     {
-        key: "sauna",
-        title: "Full spectrum Infrared sauna",
-        text: [
-            "Infrared Saunas are an effective tool for natural healing and prevention.  Infrared has the ability to penetrate human tissue which in turn produces a host of anti-aging health benefits. If you want to get yourself back into balance, the benefits of an infrared sauna may be just what you need to achieve your wellness goals."
-        ],
-        list: [
-            ["Detoxification: ", "We are exposed and we ingest toxins everyday. Toxic substances are in the air we breathe, the water we drink, the food we eat and in the products we put on our skin. The fundamental benefit of an infrared sauna is to naturally detox the body through sweat. The technology allows the body to heat from the inside up to 3 degrees allowing your body to experience a deep productive sweat rather than just hot ambient air that only heats your outer skin. The Sunlighten infrared will provide a deep productive detoxifying experience that will leave you feeling refreshed and energized."],
-            ["Muscle Recovery and Performance: ", "When the body is trying to heal from an injury or recovering from a workout, deep penetrating infrared rays have been clinically proven to restore cellular repair while increasing circulation to remove cellular debris that includes pain producing chemicals such as lactic acid. Recovering with an infrared sauna session allows for damaged tissues to be healed and energy to be restored more effectively and more efficiently."],
-            ["Relaxation: ", "The therapeutic heat helps relax muscles that become tense under chronic stress.  As chiropractors, it’s vitally important to provide support for our clients to balance the autonomic nerve system.  When you do an IR sauna, the technology of the Sunlighten Sauna helps to calm muscles allowing you to feel relaxed and energized. "],
-            ["Strengthens Immune System: ", "It has been shown that when we increase our body’s core temperature (fever), we may increase our ability to fight infections by stimulating heat shock proteins that deter viruses from replicating and decrease inflammatory cytokine proteins. The Sunlighten’s infrared heating technology penetrates to the cellular level, clinically proven to raise core body temperature by 3 degrees. "]
-
-        ],
-        text2: [
-            "Whether you're looking to enhance your overall wellness or address specific health concerns, our integrated approach combines chiropractic care with nutritional support to help you achieve your health goals.",
-            "For more benefits such as weight loss, heart health and anti-aging read here: https://www.sunlighten.com/infrared-sauna-health-benefits",
-            "To schedule or for questions, call our office! Sessions will be up to an hour.  Please bring proper attire such as a workout outfit or bathing suit, water, and a towel."
-
-        ],
-    },
-    {
         key: "cupping",
         title: "Myofascial Gliding and Static Cupping",
         text: [
@@ -154,6 +134,26 @@ const contentCards: any = [
         text3: "Our cupping therapy is designed to work synergistically with functional correction chiropractic care, offering a holistic approach to your health and well-being. Whether you're dealing with chronic pain, recovering from an injury, or looking to enhance your overall wellness, our integrated treatments can help you achieve your health goals."
         
     }
+    // {
+    //     key: "sauna",
+    //     title: "Full spectrum Infrared sauna",
+    //     text: [
+    //         "Infrared Saunas are an effective tool for natural healing and prevention.  Infrared has the ability to penetrate human tissue which in turn produces a host of anti-aging health benefits. If you want to get yourself back into balance, the benefits of an infrared sauna may be just what you need to achieve your wellness goals."
+    //     ],
+    //     list: [
+    //         ["Detoxification: ", "We are exposed and we ingest toxins everyday. Toxic substances are in the air we breathe, the water we drink, the food we eat and in the products we put on our skin. The fundamental benefit of an infrared sauna is to naturally detox the body through sweat. The technology allows the body to heat from the inside up to 3 degrees allowing your body to experience a deep productive sweat rather than just hot ambient air that only heats your outer skin. The Sunlighten infrared will provide a deep productive detoxifying experience that will leave you feeling refreshed and energized."],
+    //         ["Muscle Recovery and Performance: ", "When the body is trying to heal from an injury or recovering from a workout, deep penetrating infrared rays have been clinically proven to restore cellular repair while increasing circulation to remove cellular debris that includes pain producing chemicals such as lactic acid. Recovering with an infrared sauna session allows for damaged tissues to be healed and energy to be restored more effectively and more efficiently."],
+    //         ["Relaxation: ", "The therapeutic heat helps relax muscles that become tense under chronic stress.  As chiropractors, it’s vitally important to provide support for our clients to balance the autonomic nerve system.  When you do an IR sauna, the technology of the Sunlighten Sauna helps to calm muscles allowing you to feel relaxed and energized. "],
+    //         ["Strengthens Immune System: ", "It has been shown that when we increase our body’s core temperature (fever), we may increase our ability to fight infections by stimulating heat shock proteins that deter viruses from replicating and decrease inflammatory cytokine proteins. The Sunlighten’s infrared heating technology penetrates to the cellular level, clinically proven to raise core body temperature by 3 degrees. "]
+
+    //     ],
+    //     text2: [
+    //         "Whether you're looking to enhance your overall wellness or address specific health concerns, our integrated approach combines chiropractic care with nutritional support to help you achieve your health goals.",
+    //         "For more benefits such as weight loss, heart health and anti-aging read here: https://www.sunlighten.com/infrared-sauna-health-benefits",
+    //         "To schedule or for questions, call our office! Sessions will be up to an hour.  Please bring proper attire such as a workout outfit or bathing suit, water, and a towel."
+
+    //     ],
+    // }
 ]
 function getCardByKey(key: string) {
     return contentCards.find((cardItem: any) => cardItem.key === key)
@@ -183,11 +183,18 @@ export default function NewPatients() {
                 </div>
                 <div className="logoFull">
                     <div className="heroText">
-                        <h1>Services</h1>
+                        <h1>Our Locations</h1>
 
                     </div>
-                    <div className="heroCTA">
-                        <a href="tel:+17207223357">Call Now: 720-722-3357</a>
+                    <div className="heroCTAContainer">
+                        <Link href="tel:+7207223357" className="heroCTATop">
+                            <p>Lakewood:</p>
+                            <span>720-722-3357</span>
+                        </Link>
+                        <Link href="tel:+7207223357" className="heroCTABottom">
+                            <p>Arvada:</p>
+                            <span>720-722-3357</span>
+                        </Link>
                     </div>
                 </div>
             </section>
@@ -216,6 +223,12 @@ export default function NewPatients() {
                     <div className="servicesLineCont">
                         <hr className="servicesLine"></hr>
                     </div>
+                    {card.title2 ? <h2>{card.title2}</h2> : <></> }
+                    <div className="infoList2">
+                        {card.list2 ? card.list2.map((item: any, id: any) => (<li key={id}><b>{item[0]}</b>{item[1]}</li>)) : <></>}
+                    </div>
+                    {card.text3 ? <p className="mb-5 mx-5">{card.text3} </p> : <></>}
+                    {card.title2 ?  <div className="servicesLineCont"><hr className="servicesLine"></hr> </div> : <></>}
                     {card.title2 ? <h2>{card.title2}</h2> : <></> }
                     <div className="infoList2">
                         {card.list2 ? card.list2.map((item: any, id: any) => (<li key={id}><b>{item[0]}</b>{item[1]}</li>)) : <></>}

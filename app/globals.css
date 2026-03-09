@@ -117,6 +117,16 @@ body {
     position: relative;
     z-index: 11;
   }
+  .navMenuLinkBook {
+    position: relative;
+    z-index: 11;
+    background-color: #1e1e1e;
+    color: white;
+    padding: 10px 16px;
+    border: 1px solid white;
+    backdrop-filter: brightness(40%);
+    z-index: 20;
+  }
 
   .nav-elementsQr {
     position: absolute;
@@ -277,13 +287,54 @@ body {
     width: 100%;
     justify-content: center;
     align-items: center;
+    gap: 20px;
   }
-
-  .logoContainer {
+  .logoContainer{
+    position: relative;
+    width: 80vw;
+    height: 20vh;
+  }
+  .heroCTAContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    width: 400px;
+  }
+  .heroCTATop {
+    display: flex;
+    width: 250px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+   
+    gap: 10px;
+    color: white;
+    padding: 10px 16px;
+    border: 1px solid white;
+    backdrop-filter: brightness(40%);
+    z-index: 20;
+  }
+  .heroCTABottom {
+    display: flex;
+    width: 250px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    
+    gap: 10px;
+    color: white;
+    padding: 10px 16px;
+    border: 1px solid white;
+    backdrop-filter: brightness(40%);
+    z-index: 20;
+  }
+  /* .logoContainer {
     position: relative;
     width: 40vw;
-    height: 40vh;
-  }
+    height: 30vh;
+  } */
   .heroCTA {
     color: white;
     padding: 10px 16px;
@@ -489,7 +540,9 @@ body {
   .contact {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: auto 1fr;
+    width: 100%;
+    height: 100%;
     padding: 3% 0;
     background-color: #303030;
   }
@@ -497,8 +550,74 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    grid-row: 1/1;
-    grid-column: 1/1;
+    width: 100%;
+    height: 100%;
+  }
+  .footerNewsletterContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+  }
+  .footerNewsletterTitleContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 10px;
+    padding: 10px;
+  }
+  .footerNewsletterTitleContainer h3 {
+    color: #fff;
+    font-size: x-large;
+    font-weight: 400;
+  }
+  .footerNewsletterContainer p {
+    color: #fff;
+    font-size: medium;
+    font-weight: 400;
+  }
+  .footerNewsletterContainer input {
+    color: #1e1e1e;
+    padding: 10px 16px;
+    
+  }
+  .footerNewsletterContainer button {
+    color: #1e1e1e;
+    background-color: #ffffff;
+    border: 1px solid #1e1e1e;
+    padding: 10px 16px;
+    
+  }
+  .footerNewsletterContainer button:hover {
+    background-color: #fff;
+    color: #1e1e1e;
+  }
+  .footerLinkContainerRow {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+  }
+  .footerLinkContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+  }
+  .footerLinkContainer a {
+    color: #fff;
+    font-size: 8px;
+    font-weight: 400;
+  }
+  .footerLinkContainer p {
+    color: #fff;
+    font-size: x-large;
+    font-weight: 400;
   }
   .iconGroupContact {
     display: flex;
@@ -516,7 +635,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 80%;
+    width: 100%;
     height: 80%;
   }
   .contactHeroTextContainer h2 {
@@ -579,7 +698,8 @@ body {
   .nameContainer {
     justify-self: center;
     display: flex;
-    
+    width: 100%;
+    gap: 10%;
   }
   .nameInputItem {
     display: flex;
@@ -635,6 +755,80 @@ body {
     justify-self: start;
     color: #fff;
   }
+  .contactTextRadioContainer {
+    display: flex;
+    justify-self: center;
+    justify-content: start;
+    width: 100%;
+  }
+  .contactLocationButtons {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+  }
+  .contactLocationBtn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2px 5px;
+    color: #fff;
+    background-color: #303030;
+    border: 2px solid #fff;
+    cursor: pointer;
+    font-size: 12px;
+    transition: background-color 0.2s, color 0.2s;
+    
+  }
+  .contactLocationBtn:hover {
+    background-color: #404040;
+  }
+  .contactLocationBtn:has(.contactLocationBtnInput:checked) {
+    background-color: #fff;
+    color: #303030;
+  }
+  .contactLocationBtnInput {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+  .textInputRadioItem {
+    color: #fff;
+  }
+  .textInputRadioItem input:not([type="radio"]) {
+    width: 100%;
+    color: #fff;
+    background-color: #303030;
+    border: none;
+    border-bottom: 2px solid #fff;
+    -webkit-appearance: none;
+    -webkit-border-radius: 0;
+  }
+  .textInputRadioItem label {
+    color: #fff;
+  }
+  .contactInputRadio {
+    width: auto;
+    height: 1.125rem;
+    margin: 0 0.5rem 0 0;
+    accent-color: #fff;
+    -webkit-appearance: auto;
+    appearance: auto;
+    background-color: transparent;
+  }
+  .contactRadioLabel {
+    display: inline-flex;
+    align-items: center;
+    color: #fff;
+    cursor: pointer;
+  }
   .contactTextAreaContainer {
     display: flex;
     justify-self: center;
@@ -650,16 +844,13 @@ body {
     -webkit-appearance: none;
     -webkit-border-radius: 0;
   }
-  .captchaContainer{
-    display: grid;
-    grid-template-columns: 2fr 9fr;
+  .contactCaptchaContainer {
+    display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 24px;
-  }
-  .captcha{
-    justify-self: center;
-
+    width: 100%;
+    height: 100%;
+    margin-left: 20px;
   }
   .contactSubmitContainer {
     display: grid;
@@ -722,7 +913,7 @@ body {
   }
   .footerLinkContainer a {
     color: #fff;
-    font-size: large;
+    font-size: 15px;
     font-weight: 400;
     margin-bottom: 14px;
   }
@@ -789,6 +980,20 @@ body {
     font-size: xx-large;
     text-align: center;
     padding: 20px 0;
+  }
+  .infoContentBook {
+    width: 100%;
+    background-color: #1e1e1e;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    color: #fff;
+  }
+  .infoContentBook h2 {
+    font-size: xx-large;
+    text-align: center;
+    padding-bottom: 20px;
   }
   .infoImgCont{
     display: flex;
@@ -1044,7 +1249,9 @@ body {
   .contactPageCont {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: auto auto;
+    width: 100%;
+    height: 100%;
     background-color: hsl(0, 0%, 19%);
   }
   .contactPageinfo {
@@ -1053,7 +1260,13 @@ body {
     justify-content: center;
     align-items: center;
     color: #fff;
+    width: 100vw;
+    height: auto;
+    gap: 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
   }
+  
   .contactPageinfo h2 {
     text-align: center;
     font-size: xx-large;
@@ -1061,10 +1274,56 @@ body {
     color: #fff;
     margin-bottom: 50px;
   }
+  .contactPageinfoText {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    width: 100%;
+    height: auto;
+  }
+  .contactPageinfoTextLeft {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0px;
+    width: 100%;
+    height: 50%;
+  }
+  .contactPageinfoTextLeft h2 {
+    font-size: large;
+    font-weight: 400;
+    color: #fff;
+  }
+  .contactPageinfoTextRight {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0px;
+    width: 100%;
+    height: 50%;
+  }
+  .contactPageinfoTextRight h2 {
+    font-size: large;
+    font-weight: 400;
+    color: #fff;
+  }
+  .contactPageinfoMap {
+    width: 80%;
+    height: 80%;
+  }
   .contactPageinfoGrid {
     display: grid;
     grid-template-columns: 1fr 2fr;
-    margin-bottom: 50px;
+    margin-bottom: 0px;
+  }
+  .contactPageinfoGrid h3 {
+    font-size: 12px;
+    font-weight: 400;
+    color: #fff;
   }
   .iconGroup {
     display: flex;
@@ -1202,11 +1461,46 @@ body {
     justify-content: center;
     align-items: center;
   }
-
+  .heroCTAContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    width: 400px;
+  }
+  .heroCTATop {
+    display: flex;
+    width: 250px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+   
+    gap: 10px;
+    color: white;
+    padding: 10px 16px;
+    border: 1px solid white;
+    backdrop-filter: brightness(40%);
+    z-index: 20;
+  }
+  .heroCTABottom {
+    display: flex;
+    width: 250px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    
+    gap: 10px;
+    color: white;
+    padding: 10px 16px;
+    border: 1px solid white;
+    backdrop-filter: brightness(40%);
+    z-index: 20;
+  }
   .logoContainer {
     position: relative;
-    width: 40vw;
-    height: 40vh;
+    width: 80vw;
+    height: 30vh;
   }
   .heroCTA {
     color: white;
@@ -1409,7 +1703,7 @@ body {
   .contact {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: auto 1fr;
     padding: 3% 0;
     background-color: #303030;
   }
@@ -1419,6 +1713,30 @@ body {
     align-items: center;
     grid-row: 1/1;
     grid-column: 1/1;
+  }
+  .footerLinkContainerRow {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+  }
+  .footerLinkContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+  }
+  .footerLinkContainer a {
+    color: #fff;
+    font-size: large;
+    font-weight: 400;
+  }
+  .footerLinkContainer p {
+    color: #fff;
+    font-size: x-large;
+    font-weight: 400;
   }
   .iconGroupContact {
     display: flex;
@@ -1436,7 +1754,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 80%;
+    width: 100%;
     height: 80%;
   }
   .contactHeroTextContainer h2 {
@@ -1498,8 +1816,8 @@ body {
   .nameContainer {
     justify-self: center;
     display: flex;
-    
-    
+    width: 100%;
+    gap: 10%;
   }
   .nameInputItem {
     display: flex;
@@ -1555,6 +1873,85 @@ body {
   .contactInputAreaContainer label {
     justify-self: start;
     color: #fff;
+  }
+  .contactTextRadioContainer {
+    display: flex;
+    justify-self: center;
+    justify-content: start;
+    width: 100%;
+  }
+  .contactLocationButtons {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+  }
+  .contactCaptchaContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    margin-left: 40px;
+  }
+  .contactLocationBtn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem 1.25rem;
+    color: #fff;
+    background-color: #303030;
+    border: 2px solid #fff;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.2s, color 0.2s;
+  }
+  .contactLocationBtn:hover {
+    background-color: #404040;
+  }
+  .contactLocationBtn:has(.contactLocationBtnInput:checked) {
+    background-color: #fff;
+    color: #303030;
+  }
+  .contactLocationBtnInput {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+  .textInputRadioItem {
+    color: #fff;
+  }
+  .textInputRadioItem input:not([type="radio"]) {
+    width: 100%;
+    color: #fff;
+    background-color: #303030;
+    border: none;
+    border-bottom: 2px solid #fff;
+    -webkit-appearance: none;
+    -webkit-border-radius: 0;
+  }
+  .textInputRadioItem label {
+    color: #fff;
+  }
+  .contactInputRadio {
+    width: auto;
+    height: 1.125rem;
+    margin: 0 0.5rem 0 0;
+    accent-color: #fff;
+    -webkit-appearance: auto;
+    appearance: auto;
+    background-color: transparent;
+  }
+  .contactRadioLabel {
+    display: inline-flex;
+    align-items: center;
+    color: #fff;
+    cursor: pointer;
   }
   .contactTextAreaContainer {
     display: flex;
@@ -1633,6 +2030,85 @@ body {
     width: 200px;
     height: 84px;
     margin-bottom: 20px;
+  }
+  .footerNewsletterContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+  }
+  .footerNewsletterTitleContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px;
+  }
+  .footerNewsletterTitleContainer h3 {
+    color: #fff;
+    font-size: x-large;
+    font-weight: 400;
+  }
+  .footerNewsletterContainer p {
+    color: #fff;
+    font-size: medium;
+    font-weight: 400;
+  }
+  .footerNewsletterContainer input {
+    color: #1e1e1e;
+    padding: 10px 16px;
+    
+  }
+  .footerNewsletterContainer button {
+    color: #1e1e1e;
+    background-color: #ffffff;
+    border: 1px solid #1e1e1e;
+    padding: 10px 16px;
+    
+  }
+  .footerNewsletterContainer button:hover {
+    background-color: #fff;
+    color: #1e1e1e;
+  }
+  .footerLinkContainer {
+    display: flex;
+    gap: 20px;
+  }
+  .footerNewsletterTitleContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px;
+  }
+  .footerNewsletterTitleContainer h3 {
+    color: #fff;
+    font-size: x-large;
+    font-weight: 400;
+  }
+  .footerNewsletterContainer p {
+    color: #fff;
+    font-size: medium;
+    font-weight: 400;
+  }
+  .footerNewsletterContainer input {
+    color: #1e1e1e;
+    padding: 10px 16px;
+    
+  }
+  .footerNewsletterContainer button {
+    color: #1e1e1e;
+    background-color: #ffffff;
+    border: 1px solid #1e1e1e;
+    padding: 10px 16px;
+    
+  }
+  .footerNewsletterContainer button:hover {
+    background-color: #fff;
+    color: #1e1e1e;
   }
   .footerLinkContainer {
     display: flex;
@@ -1716,6 +2192,20 @@ body {
     padding: 40px;
   }
   .infoContent h2 {
+    font-size: xx-large;
+    text-align: center;
+    padding-bottom: 20px;
+  }
+  .infoContentBook {
+    width: 100%;
+    background-color: #1e1e1e;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    color: #fff;
+  }
+  .infoContentBook h2 {
     font-size: xx-large;
     text-align: center;
     padding-bottom: 20px;
@@ -1971,7 +2461,7 @@ body {
   .contactPageCont {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: auto 1fr;
     background-color: hsl(0, 0%, 19%);
   }
   .contactPageinfo {
@@ -1980,6 +2470,11 @@ body {
     justify-content: center;
     align-items: center;
     color: #fff;
+    width: 100%;
+    height: 100%;
+    gap: 40px;
+    padding-top: 20px;
+    padding-bottom: 20px;
   }
   .contactPageinfo h2 {
     text-align: center;
@@ -1987,6 +2482,16 @@ body {
     font-weight: 450;
     color: #fff;
     margin-bottom: 50px;
+  }
+  .contactPageinfoText {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+    width: 100%;
+    height: 100%;
+    padding-bottom: 20px;
   }
   .contactPageinfoGrid {
     display: grid;
@@ -2132,7 +2637,36 @@ body {
     width: 40vw;
     height: 40vh;
   }
-  .heroCTA {
+  .heroCTAContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    width: 400px;
+  }
+  .heroCTATop {
+    display: flex;
+    width: 250px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+   
+    gap: 10px;
+    color: white;
+    padding: 10px 16px;
+    border: 1px solid white;
+    backdrop-filter: brightness(40%);
+    z-index: 20;
+  }
+  .heroCTABottom {
+    display: flex;
+    width: 250px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    
+    gap: 10px;
     color: white;
     padding: 10px 16px;
     border: 1px solid white;
@@ -2418,7 +2952,8 @@ body {
   .nameContainer {
     justify-self: center;
     display: flex;
-    
+    width: 100%;
+    gap: 10%;
   }
   .nameInputItem {
     display: flex;
@@ -2474,6 +3009,91 @@ body {
     justify-self: start;
     color: #fff;
   }
+  .contactTextRadioContainer {
+    display: flex;
+    justify-self: center;
+    justify-content: start;
+    width: 100%;
+    color: #fff;
+    gap:20px;
+  }
+  .contactLocationButtons {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+  }
+  .contactLocationBtn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem 1.25rem;
+    color: #fff;
+    background-color: #303030;
+    border: 2px solid #fff;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.2s, color 0.2s;
+  }
+  .contactLocationBtn:hover {
+    background-color: #404040;
+  }
+  .contactLocationBtn:has(.contactLocationBtnInput:checked) {
+    background-color: #fff;
+    color: #303030;
+  }
+  .contactLocationBtnInput {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+  .textInputRadioItemContainer label {
+    color: #fff;
+    width: 100%;
+    font-size: medium;
+  }
+  .textInputRadioItemContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    width: 100%;
+  }
+  .textInputRadioItemContainer label {
+    color: #fff;
+    width: 100%;
+  }
+  .textInputRadioItem {
+    color: #fff;
+  }
+  .textInputRadioItem input:not([type="radio"]) {
+    width: 100%;
+    color: #fff;
+    background-color: #303030;
+  }
+  .textInputRadioItem label {
+    color: #fff;
+  }
+  .contactInputRadio {
+    width: auto;
+    height: 1.125rem;
+    margin: 0 0.5rem 0 0;
+    accent-color: #fff;
+    -webkit-appearance: auto;
+    appearance: auto;
+    background-color: transparent;
+  }
+  .contactRadioLabel {
+    display: inline-flex;
+    align-items: center;
+    color: #fff;
+    cursor: pointer;
+  }
   .contactTextAreaContainer {
     display: flex;
     justify-self: center;
@@ -2489,16 +3109,12 @@ body {
     -webkit-appearance: none;
     -webkit-border-radius: 0;
   }
-  .captchaContainer{
-    display: grid;
-    grid-template-columns: 2fr 9fr;
+  .contactCaptchaContainer {
+    display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 10px;
-  }
-  .captcha{
-    justify-self: center;
-
+    width: 100%;
+    height: 100%;
   }
   .contactSubmitContainer {
     display: grid;
@@ -2551,13 +3167,69 @@ body {
     width: 200px;
     height: 84px;
   }
+  .footerNewsletterContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+  }
+  .footerNewsletterTitleContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px;
+  }
+  .footerNewsletterTitleContainer h3 {
+    color: #fff;
+    font-size: x-large;
+    font-weight: 400;
+  }
+  .footerNewsletterContainer p {
+    color: #fff;
+    font-size: medium;
+    font-weight: 400;
+  }
+  .footerNewsletterContainer input {
+    color: #1e1e1e;
+    padding: 10px 16px;
+    
+  }
+  .footerNewsletterContainer button {
+    color: #1e1e1e;
+    background-color: #ffffff;
+    border: 1px solid #1e1e1e;
+    padding: 10px 16px;
+    
+  }
+  .footerNewsletterContainer button:hover {
+    background-color: #fff;
+    color: #1e1e1e;
+  }
+  .footerLinkContainerRow {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+  }
   .footerLinkContainer {
     display: flex;
-    
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
   }
   .footerLinkContainer a {
     color: #fff;
     font-size: large;
+    font-weight: 400;
+  }
+  .footerLinkContainer p {
+    color: #fff;
+    font-size: x-large;
     font-weight: 400;
   }
   .footerBottom {
@@ -2627,6 +3299,20 @@ body {
     padding: 40px;
   }
   .infoContent h2 {
+    font-size: xx-large;
+    text-align: center;
+    padding-bottom: 20px;
+  }
+  .infoContentBook {
+    width: 100%;
+    background-color: #1e1e1e;
+    padding-left: 20vw;
+    padding-right: 20vw;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    color: #fff;
+  }
+  .infoContentBook h2 {
     font-size: xx-large;
     text-align: center;
     padding-bottom: 20px;
@@ -2882,8 +3568,8 @@ body {
   }
   .contactPageCont {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr auto;
     background-color: hsl(0, 0%, 19%);
   }
   .contactPageinfo {
@@ -2892,6 +3578,7 @@ body {
     justify-content: center;
     align-items: center;
     color: #fff;
+    padding-top: 50px;
   }
   .contactPageinfo h2 {
     text-align: center;
@@ -2899,6 +3586,42 @@ body {
     font-weight: 450;
     color: #fff;
     margin-bottom: 50px;
+  }
+  .contactPageinfoText {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+    width: 100%;
+    height: 100%;
+    padding: 50px;
+  }
+  .contactPageinfoTextLeft {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0px;
+    width: 50%;
+  }
+  .contactPageinfoTextLeft h2 {
+    font-size: x-large;
+    font-weight: 400;
+    color: #fff;
+  }
+  .contactPageinfoTextRight {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0px;
+    width: 50%;
+  }
+  .contactPageinfoTextRight h2 {
+    font-size: x-large;
+    font-weight: 400;
+    color: #fff;
   }
   .contactPageinfoGrid {
     display: grid;
@@ -2917,7 +3640,7 @@ body {
   }
   .contactPage {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     padding: 3% 0;
   }
 
@@ -2925,13 +3648,22 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 50%;
   }
   .contactPageRight {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
+    width: 50%;
     height: 100%;
     padding: 50px 0;
+  }
+  .contactPageinfoMap {
+    width: 100%;
+    height: 100%;
+  }
+  .contactPageinfoMap iframe {
+    width: 100%;
+    height: 100%;
   }
 }

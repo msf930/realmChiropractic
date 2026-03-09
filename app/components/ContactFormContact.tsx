@@ -1,40 +1,30 @@
 "use client"
 
-import React, { useEffect, useRef, useState, } from "react";
+import React, { useState } from "react";
 
 import Link from "next/link";
 
 import { IconContext } from "react-icons";
-import { AiFillFacebook, AiOutlineX, AiFillInstagram, AiOutlineArrowRight } from "react-icons/ai";
-import HCaptcha from '@hcaptcha/react-hcaptcha';
+import { AiFillFacebook, AiOutlineX, AiFillInstagram } from "react-icons/ai";
 
 const ContactForm = () => {
   const [submitted, setSubmitted] = useState(false);
-  const [result, setResult] = useState(["", ""]);
-  const [token, setToken] = useState<string | null>(null);
-  const captchaRef = useRef(null);
-  useEffect(() => {
-    if (token) console.log(`hCaptcha Token: ${token}`);
-  }, [token]);
-
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const form = e.target as HTMLFormElement;
     const formData = new FormData(form);
 
-    const location = formData.get('location') as string;
-    const formEndpoint = location === 'arvada' ? process.env.NEXT_PUBLIC_FORM_ENDPOINT_ARVADA : process.env.NEXT_PUBLIC_FORM_ENDPOINT;
 
-    const body = Object.fromEntries(formData.entries()) as Record<string, string>;
-    if (token) body['h-captcha-response'] = token;
 
-    fetch(`${formEndpoint}`, {
+
+
+    fetch(`${process.env.NEXT_PUBLIC_FORM_ENDPOINT}`, {
       method: 'POST',
       headers: {
         Accept: 'application/json',
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify(body),
+      body: JSON.stringify(formData),
     })
       .then((response) => {
         if (!response.ok) {
@@ -44,7 +34,8 @@ const ContactForm = () => {
         setSubmitted(true);
       })
       .catch((err) => {
-        console.error('Error:', err);
+        // Submit the form manually
+        form.submit();
       });
   };
 
@@ -68,20 +59,20 @@ const ContactForm = () => {
           <p className="contactHeroTextMobile">
             Let us know how we can serve you!
           </p>
-          {/* <IconContext.Provider value={{ color: "white", size: "30px" }}>
+          <IconContext.Provider value={{ color: "white", size: "30px" }}>
             <div className="iconGroupContact">
-              <Link className="icon" href={"https://twitter.com/Realmlakewood"}><AiOutlineX /></Link>
-              <Link className="icon" href={"https://www.facebook.com/realmlakewood/?fref=ts/"}><AiFillFacebook /></Link>
-              <Link className="icon" href={"https://www.instagram.com/realmchiropractic/"}><AiFillInstagram /></Link>
+              <Link href={"https://twitter.com/Realmlakewood"}><AiOutlineX /></Link>
+              <Link href={"https://www.facebook.com/realmlakewood/?fref=ts/"}><AiFillFacebook /></Link>
+              <Link href={"https://www.instagram.com/realmchiropractic/"}><AiFillInstagram /></Link>
             </div>
-          </IconContext.Provider> */}
+          </IconContext.Provider>
         </div>
 
       </div>
       <div className="contactRight">
         <div className="contactFormContainer">
           <form
-            // action={`${process.env.NEXT_PUBLIC_FORM_ENDPOINT}`}
+            action={`${process.env.NEXT_PUBLIC_FORM_ENDPOINT}`}
             onSubmit={handleSubmit}
             method="POST"
             className="contactForm"
@@ -164,54 +155,7 @@ const ContactForm = () => {
               </div>
 
             </div>
-            <div className="contactInputContainer">
-              <label className="contactLabel">Location</label>
-              <div className="contactLocationButtons" role="group" aria-label="Location">
-                <label className="contactLocationBtn">
-                  <input
-                    type="radio"
-                    name="location"
-                    value="lakewood"
-                    title="Lakewood"
-                    aria-label="Lakewood"
-                    className="contactLocationBtnInput"
-                    required
-                  />
-                  <span>Lakewood</span>
-                </label>
-                <label className="contactLocationBtn">
-                  <input
-                    type="radio"
-                    name="location"
-                    value="arvada"
-                    title="Arvada"
-                    aria-label="Arvada"
-                    className="contactLocationBtnInput"
-                    required
-                  />
-                  <span>Arvada</span>
-                </label>
-                <label className="contactLocationBtn">
 
-                  <Link href="/locations">Learn More  </Link>
-
-                </label>
-              </div>
-              <div className="contactSpacer"></div>
-            </div>
-            
-            <div className="contactCaptchaContainer">
-
-              <HCaptcha
-                sitekey={process.env.NEXT_PUBLIC_HCAPTCHA_SITE_KEY ?? ''}
-                // onLoad={onLoad}
-                onVerify={(t) => setToken(t)}
-                ref={captchaRef}
-                reCaptchaCompat={false}
-                size="normal"
-                theme="dark"
-              />
-            </div>
             <div className="contactSubmitContainer">
               <div></div>
               <button
