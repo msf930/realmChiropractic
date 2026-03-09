@@ -134,6 +134,19 @@ export default function Home() {
                 unoptimized={true}
               />
             </Link>
+            <Link href="/locations" className="servicesItem">
+              <h2 className="servicesItemTitle">Locations</h2>
+              <Image
+                className="serviceImg"
+                src={Spine}
+                alt="spine"
+                layout="fill"
+                objectFit="cover"
+                objectPosition="center"
+                placeholder='blur'
+                unoptimized={true}
+              />
+            </Link>
             <Link href="/team" className="servicesItem">
               <h2 className="servicesItemTitle">Meet Our Team</h2>
               <Image
@@ -160,19 +173,7 @@ export default function Home() {
                 unoptimized={true}
               />
             </Link>
-            <Link href="/structuralChiro" className="servicesItem">
-              <h2 className="servicesItemTitle">Structural Chiropractic</h2>
-              <Image
-                className="serviceImg"
-                src={Spine}
-                alt="spine"
-                layout="fill"
-                objectFit="cover"
-                objectPosition="center"
-                placeholder='blur'
-                unoptimized={true}
-              />
-            </Link>
+            
           </div>
         </div>
       </section>

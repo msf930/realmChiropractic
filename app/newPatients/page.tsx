@@ -194,20 +194,7 @@ export default function NewPatients() {
                             />
                         </div>
                     </div>
-                    <div className="infoImgCont">
-                        <div className="infoImg">
-                            <Image
-                                src={card?.image2}
-                                alt="clipboard"
-                                layout="fill"
-                                objectFit="contain"
-                                placeholder="blur"
-                                objectPosition="center"
-                                unoptimized={true}
-
-                            />
-                        </div>
-                    </div>
+                   
                 </div>
             </section>
             <section>
