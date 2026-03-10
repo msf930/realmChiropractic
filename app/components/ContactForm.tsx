@@ -12,40 +12,36 @@ const ContactForm = () => {
   const [submitted, setSubmitted] = useState(false);
   const [result, setResult] = useState(["", ""]);
   const [token, setToken] = useState<string | null>(null);
+  const [formEndpoint, setFormEndpoint] = useState<string>(
+    () => process.env.NEXT_PUBLIC_FORM_ENDPOINT_LAKEWOOD ?? ''
+  );
   const captchaRef = useRef(null);
   useEffect(() => {
     if (token) console.log(`hCaptcha Token: ${token}`);
   }, [token]);
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const onHCaptchaChange = (token: string) => {
+    setToken(token);
+  };
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const form = e.target as HTMLFormElement;
+    const form = e.currentTarget;
     const formData = new FormData(form);
+    formData.set('access_key', formEndpoint);
+    if (token) formData.set('h-captcha-response', token);
 
-    const location = formData.get('location') as string;
-    const formEndpoint = location === 'arvada' ? process.env.NEXT_PUBLIC_FORM_ENDPOINT_ARVADA : process.env.NEXT_PUBLIC_FORM_ENDPOINT;
-
-    const body = Object.fromEntries(formData.entries()) as Record<string, string>;
-    if (token) body['h-captcha-response'] = token;
-
-    fetch(`${formEndpoint}`, {
-      method: 'POST',
-      headers: {
-        Accept: 'application/json',
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(body),
-    })
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error('Form response was not ok');
-        }
-
-        setSubmitted(true);
-      })
-      .catch((err) => {
-        console.error('Error:', err);
+    try {
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: formData,
       });
+      const data = await res.json();
+      if (data.success) setSubmitted(true);
+      else console.error('Form error:', data.message);
+    } catch (err) {
+      console.error('Submit error:', err);
+    }
   };
 
   if (submitted) {
@@ -61,12 +57,12 @@ const ContactForm = () => {
     <section className="contact">
       <div className="contactLeft">
         <div className="contactHeroTextContainer">
-          <h2>Contact Us</h2>
+          <h2>Your Health Story Matters </h2>
           <p className="contactHeroTextFull">
-            Let us know how we can serve you!
+          Tell us a little about what&apos;s going on and we&apos;ll reach out to schedule your complimentary consultation. 
           </p>
           <p className="contactHeroTextMobile">
-            Let us know how we can serve you!
+          Tell us a little about what&apos;s going on and we&apos;ll reach out to schedule your complimentary consultation. 
           </p>
           {/* <IconContext.Provider value={{ color: "white", size: "30px" }}>
             <div className="iconGroupContact">
@@ -81,11 +77,11 @@ const ContactForm = () => {
       <div className="contactRight">
         <div className="contactFormContainer">
           <form
-            // action={`${process.env.NEXT_PUBLIC_FORM_ENDPOINT}`}
             onSubmit={handleSubmit}
             method="POST"
             className="contactForm"
           >
+            <input type="hidden" name="access_key" value={formEndpoint} />
             <div className="contactNameContainer">
               <label className="contactLabel" htmlFor="nameFirst">Name</label>
               <div className="nameContainer">
@@ -175,6 +171,8 @@ const ContactForm = () => {
                     title="Lakewood"
                     aria-label="Lakewood"
                     className="contactLocationBtnInput"
+                    defaultChecked
+                    onChange={() => setFormEndpoint(process.env.NEXT_PUBLIC_FORM_ENDPOINT_LAKEWOOD ?? '')}
                     required
                   />
                   <span>Lakewood</span>
@@ -187,6 +185,7 @@ const ContactForm = () => {
                     title="Arvada"
                     aria-label="Arvada"
                     className="contactLocationBtnInput"
+                    onChange={() => setFormEndpoint(process.env.NEXT_PUBLIC_FORM_ENDPOINT_ARVADA ?? '')}
                     required
                   />
                   <span>Arvada</span>
@@ -205,7 +204,7 @@ const ContactForm = () => {
               <HCaptcha
                 sitekey={process.env.NEXT_PUBLIC_HCAPTCHA_SITE_KEY ?? ''}
                 // onLoad={onLoad}
-                onVerify={(t) => setToken(t)}
+                onVerify={onHCaptchaChange}
                 ref={captchaRef}
                 reCaptchaCompat={false}
                 size="normal"
@@ -213,13 +212,13 @@ const ContactForm = () => {
               />
             </div>
             <div className="contactSubmitContainer">
-              <div></div>
+              {/* <div></div> */}
               <button
                 className="contactSubmitBtn"
                 type="submit"
                 value="Submit"
               >
-                Submit
+                Unlock My Health
               </button>
               <div className="contactSpacer"></div>
             </div>

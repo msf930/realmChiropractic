@@ -27,6 +27,11 @@ const center = {
     lng: -105.07989313719689
 };
 
+const center2 = {
+    lat: 39.81546589152875,
+    lng: -105.16254867838613
+};
+
 const mapStyle = [
     { elementType: "geometry", stylers: [{ color: "#242f3e" }] },
     { elementType: "labels.text.stroke", stylers: [{ color: "#242f3e" }] },
@@ -162,9 +167,9 @@ export default function Contact() {
                             <p>Lakewood:</p>
                             <span>720-722-3357</span>
                         </Link>
-                        <Link href="tel:+7207223357" className="heroCTABottom">
+                        <Link href="tel:+7205880498" className="heroCTABottom">
                             <p>Arvada:</p>
-                            <span>720-722-3357</span>
+                            <span>720-588-0498</span>
                         </Link>
                     </div>
                 </div>
@@ -183,9 +188,15 @@ export default function Contact() {
                                     <h3>Address:</h3>
                                 </div>
                                 <div>
-                                    <h3>720-722-3357</h3>
-                                    <h3>realmlakewood@gmail.com</h3>
-                                    <h3>Realm Chiropractic <br></br> 98 Wadsworth Blvd.<br></br>Lakewood, CO 80226</h3>
+                                    <a href="tel:+7207223357">
+                                        <h3>720-722-3357</h3>
+                                    </a>
+                                    <a href="mailto:realmlakewood@gmail.com">
+                                        <h3>realmlakewood@gmail.com</h3>
+                                    </a>
+                                    <a href="https://maps.app.goo.gl/e9E6tyZgz2XQVq1z6" target="_blank">
+                                        <h3>Realm Chiropractic <br></br> 98 Wadsworth Blvd.<br></br>Lakewood, CO 80226</h3>
+                                    </a>
 
                                 </div>
                             </div>
@@ -214,23 +225,28 @@ export default function Contact() {
                                     <h3>Address:</h3>
                                 </div>
                                 <div>
-                                    <h3>720-722-3357</h3>
-                                    <h3>realmlakewood@gmail.com</h3>
-                                    <h3>Realm Chiropractic <br></br> 98 Wadsworth Blvd.<br></br>Lakewood, CO 80226</h3>
-
+                                    <a href="tel:+7205880498">
+                                        <h3>720-588-0498</h3>
+                                    </a>
+                                    <a href="mailto:realmarvada@gmail.com">
+                                        <h3>realmarvada@gmail.com</h3>
+                                    </a>
+                                    <a href="https://maps.app.goo.gl/dKzr1HKRxx88PaTY8" target="_blank">
+                                        <h3>Realm Chiropractic <br></br> 6580 Holman St #104<br></br>Arvada, CO 80004</h3>
+                                    </a>
                                 </div>
                             </div>
                             <section className="contactPageinfoMap">
                                 {isLoaded && (
                                     <GoogleMap
                                         mapContainerStyle={containerStyle}
-                                        center={center}
+                                        center={center2}
                                         zoom={13}
                                         options={{
                                             styles: mapStyle,
                                         }}
                                     >
-                                        <Marker position={center} />
+                                        <Marker position={center2} />
                                     </GoogleMap>
                                 )}
                             </section>

@@ -25,12 +25,14 @@ export default function Footer() {
                 </div>
                 <div className="footerNewsletterContainer">
                     <div className="footerNewsletterTitleContainer">
-                        <h3>Subscribe to our Newsletter</h3>
-                        <p>Stay informed on events and seasonal offerings</p>
+                        <h3>Step Inside The Realm! </h3>
+                        <p>Get health insights, recovery tips and performance strategies delivered to you inbox weekly! </p>
                     </div>
                     <div className="footerNewsletterInputContainer">
-                        <input type="email" placeholder="Email" />
-                        <button>Subscribe</button>
+                        <Link href="http://eepurl.com/g2eGi5" target="_blank">
+                           
+                            <button >Enter The Realm</button>
+                        </Link>
                     </div>
                 </div>
                 <div className="footerLinkContainerRow">
@@ -41,8 +43,8 @@ export default function Footer() {
                     </div>
                     <div className="footerLinkContainer">
                         <p>Arvada Location</p>
-                        <a href="tel:+7207223357">720-722-3357</a>
-                        <a href="mailto:realmlakewood@gmail.com">realmlakewood@gmail.com</a>
+                        <a href="tel:+7205880498">720-588-0498</a>
+                        <a href="mailto:realmarvada@gmail.com">realmarvada@gmail.com</a>
                     </div>
                 </div>
                 <IconContext.Provider value={{ color: "white", size: "17px" }}>
