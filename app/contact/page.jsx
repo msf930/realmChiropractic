@@ -19,10 +19,10 @@ export default function Contact() {
                 "2) You will get to know us, and how we may be able to assist you in achieving optimal health.",
                 " During your consultation, we will provide you with an overview of structural chiropractic, and then explain how our focus - Functional Correction - is quite different from traditional chiropractic that you are probably accustomed to hearing about. But the most important aspect of the consultation is for us to determine if what we offer, can be the solution that you have been searching for.",
                 " At the conclusion of your consultation, you will have the option of getting started that day if you so choose, or we can schedule you for a future date. At this time, we will get your full patient history, followed by a comprehensive Functional Chiropractic examination which includes:",
-                "- Neuro Functional Thermography Analysys",
+                "- Neuro Functional Thermography Analysis",
                 "- Neuro Functional Muscular Analysis",
                 "- Multi-Axial Structural Analysis",
-                "- Automatic Operating System Anaylsis",
+                "- Automatic Operating System Analysis",
                 "To be very clear, there is NO CHARGE for our consultation. We do not feel right charging for a conversation.",
                 "To Schedule Your Appointment at our Lakewood chiropractic office, please call 720.722.3357 or fill out the form below and we will contact you promptly!"]
            
