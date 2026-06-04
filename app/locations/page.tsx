@@ -163,11 +163,11 @@ export default function Contact() {
 
                     </div>
                     <div className="heroCTAContainer">
-                        <Link href="tel:+7207223357" className="heroCTATop">
+                        <Link href="tel:+17207223357" className="heroCTATop">
                             <p>Lakewood:</p>
                             <span>720-722-3357</span>
                         </Link>
-                        <Link href="tel:+7205880498" className="heroCTABottom">
+                        <Link href="tel:+17205880498" className="heroCTABottom">
                             <p>Arvada:</p>
                             <span>720-588-0498</span>
                         </Link>
