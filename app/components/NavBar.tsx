@@ -126,7 +126,6 @@ const NavBar = () => {
                                     </Link>
                                 </li>
                                 {/* <li className="mx-3 text-center items-center justify-center">
-                                {/* <li className="mx-3 text-center items-center justify-center">
                                     <Link href="/myofascialCupping">
                                         <p>Myofascial<br />Cupping</p>
                                     </Link>

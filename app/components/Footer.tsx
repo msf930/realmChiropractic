@@ -1,11 +1,7 @@
-"use client"
-
-import Logo from "../../public/og.png";
 import Image from "next/image";
-
 import Link from "next/link";
+import Logo from "../../public/og.png";
 
-import { IconContext } from "react-icons";
 import { AiFillFacebook, AiOutlineX, AiFillInstagram } from "react-icons/ai";
 
 
@@ -47,13 +43,11 @@ export default function Footer() {
                         <a href="mailto:realmarvada@gmail.com">realmarvada@gmail.com</a>
                     </div>
                 </div>
-                <IconContext.Provider value={{ color: "white", size: "17px" }}>
-                    <div className="iconGroup">
-                        <Link target="_blank" href={"https://twitter.com/Realmlakewood"}><AiOutlineX /></Link>
-                        <Link target="_blank" href={"https://www.facebook.com/realmlakewood/?fref=ts/"}><AiFillFacebook /></Link>
-                        <Link target="_blank" href={"https://www.instagram.com/realmchiropractic/"}><AiFillInstagram /></Link>
-                    </div>
-                </IconContext.Provider>
+                <div className="iconGroup">
+                    <Link target="_blank" href={"https://twitter.com/Realmlakewood"}><AiOutlineX color="white" size={17} /></Link>
+                    <Link target="_blank" href={"https://www.facebook.com/realmlakewood/?fref=ts/"}><AiFillFacebook color="white" size={17} /></Link>
+                    <Link target="_blank" href={"https://www.instagram.com/realmchiropractic/"}><AiFillInstagram color="white" size={17} /></Link>
+                </div>
             </div>
             <div className="footerBottom">
                 <div className="footerCopyContainer">

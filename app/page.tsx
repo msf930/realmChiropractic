@@ -1,9 +1,9 @@
 import Image from "next/image";
-import Link from "next/link";
 
 import Carousel from "./components/Carousel";
 import ContactForm from "./components/ContactForm";
 import Footer from "./components/Footer";
+import Link from "next/link";
 
 import Hero from "@/public/Hero.jpg";
 import Logo from "@/public/og.png";

@@ -5,6 +5,8 @@ import NavBar from "./components/NavBar";
 
 const inter = Montserrat({ subsets: ["latin"] });
 
+export const dynamic = "force-static";
+
 export const metadata: Metadata = {
   title: "Realm Chiropractic",
   description: "Realm Chiropractic is focused on functional correction. We use state of the art technology and techniques to restore full function of the spine and nervous system to allow the in-born recuperative capacity of the body to work optimally.",

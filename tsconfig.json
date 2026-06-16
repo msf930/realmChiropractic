@@ -24,6 +24,9 @@
     "paths": {
       "@/*": [
         "./*"
+      ],
+      "next/link": [
+        "./app/components/Link.tsx"
       ]
     },
     "target": "ES2017"
