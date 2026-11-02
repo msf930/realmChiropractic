@@ -65,13 +65,13 @@ export default function Locations() {
                       <h3>realmlakewood@gmail.com</h3>
                     </a>
                     <a
-                      href="https://maps.app.goo.gl/e9E6tyZgz2XQVq1z6"
+                      href="https://www.google.com/maps/search/?api=1&query=10600+W+Alameda+Ave+Suite+120+Lakewood+CO+80226"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
                       <h3>
                         Realm Chiropractic <br />
-                        98 Wadsworth Blvd.
+                        10600 W Alameda Suite 120
                         <br />
                         Lakewood, CO 80226
                       </h3>

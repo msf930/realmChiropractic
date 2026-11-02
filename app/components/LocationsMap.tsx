@@ -9,8 +9,8 @@ const containerStyle = {
 };
 
 export const lakewoodCenter = {
-  lat: 39.71635284708693,
-  lng: -105.07989313719689,
+  lat: 39.71038675356693,
+  lng: -105.11712735383523,
 };
 
 export const arvadaCenter = {
