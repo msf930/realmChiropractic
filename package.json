@@ -2,6 +2,9 @@
   "name": "realm",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": "26.x"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -9,7 +12,6 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@hcaptcha/react-hcaptcha": "^1.11.1",
     "@hcaptcha/react-hcaptcha": "^1.11.1",
     "@react-google-maps/api": "^2.19.3",
     "next": "^16.1.6",
